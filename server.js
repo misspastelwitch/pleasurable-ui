@@ -28,11 +28,53 @@ app.get('/', async function (request, response) {
   response.render('index.liquid')
 })
 
+app.get('/over-ons', async function (request, response) {
+  response.render('over-ons.liquid')
+})
+
+// geen extra details paginas voor over-ons
+
+app.get('/events', async function (request, response) {
+  response.render('events.liquid')
+})
+
+// extra detailpagina's voor evenementen (JSON file)
+// zoek functie hier
+
+app.get('/publicaties', async function (request, response) {
+  response.render('publicaties.liquid')
+})
+
+// detailpaginas voor publicaties
+// zoek functie hier
+
+app.get('/leden', async function (request, response) {
+  response.render('leden.liquid')
+})
+
+// detailpagina
+// zoek functie
+
+app.get('/vacatures', async function (request, response) {
+  response.render('vacatures.liquid')
+})
+
+// detailpagina
+// zoek functie
+
+app.get('/lid-worden', async function (request, response) {
+  response.render('lid-worden.liquid')
+})
+
+// form element
+
+
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000; als deze applicatie ergens gehost wordt, waarschijnlijk poort 80
 app.set('port', process.env.PORT || 8000)
 
 // Start Express op, gebruik daarbij het zojuist ingestelde poortnummer op
 app.listen(app.get('port'), function () {
-  console.log(`Project draait via http://localhost:${app.get('port')}/\n\nSucces deze sprint. En maak mooie dingen! 🙂`)
+
+  console.log(Da only one website! 🔮)
 })
