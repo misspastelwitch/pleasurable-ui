@@ -8,6 +8,16 @@ import { Liquid } from 'liquidjs';
 // Maak een nieuwe Express applicatie aan, waarin we de server configureren
 const app = express()
 
+const agencies = await fetch("https://fdnd-agency.directus.app/items/dda_agencies");
+const agenciesJSON = await agencies.json();
+
+const agenciesVacancies = await fetch("https://fdnd-agency.directus.app/items/dda_agencies_vacancies");
+const agenciesVacanciesJSON = await agenciesVacancies.json();
+
+const events = await fetch("https://fdnd-agency.directus.app/items/dda_events");
+const eventsJSON = await events.json();
+
+
 // Maak werken met data uit formulieren iets prettiger
 app.use(express.urlencoded({extended: true}))
 
@@ -35,28 +45,35 @@ app.get('/over-ons', async function (request, response) {
 // geen extra details paginas voor over-ons
 
 app.get('/events', async function (request, response) {
-  response.render('events.liquid')
+  response.render('events.liquid', {
+   event: eventsJSON.data
+  });
 })
 
 // extra detailpagina's voor evenementen (JSON file)
 // zoek functie hier
 
 app.get('/publicaties', async function (request, response) {
-  response.render('publicaties.liquid')
+  response.render('publicaties.liquid'), {
+    publication: publicationsJSON.data
+  } 
 })
 
 // detailpaginas voor publicaties
 // zoek functie hier
 
 app.get('/leden', async function (request, response) {
-  response.render('leden.liquid')
+  response.render('leden.liquid', {
+    agency: agenciesVacanciesJSON.data 
+  }) 
 })
 
 // detailpagina
 // zoek functie
 
 app.get('/vacatures', async function (request, response) {
-  response.render('vacatures.liquid')
+  response.render('vacatures.liquid', {
+  })
 })
 
 // detailpagina
@@ -76,5 +93,5 @@ app.set('port', process.env.PORT || 8000)
 // Start Express op, gebruik daarbij het zojuist ingestelde poortnummer op
 app.listen(app.get('port'), function () {
 
-  console.log(Da only one website! 🔮)
+  console.log('Da only one website! 🔮')
 })
