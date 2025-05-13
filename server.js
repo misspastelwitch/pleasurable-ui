@@ -11,8 +11,8 @@ const app = express()
 const agencies = await fetch("https://fdnd-agency.directus.app/items/dda_agencies");
 const agenciesJSON = await agencies.json();
 
-const agenciesVacancies = await fetch("https://fdnd-agency.directus.app/items/dda_agencies_vacancies");
-const agenciesVacanciesJSON = await agenciesVacancies.json();
+const publications = await fetch("https://fdnd-agency.directus.app/items/dda_publications")
+const publicationsJSON = await publications.json();
 
 const events = await fetch("https://fdnd-agency.directus.app/items/dda_events");
 const eventsJSON = await events.json();
@@ -46,7 +46,7 @@ app.get('/over-ons', async function (request, response) {
 
 app.get('/events', async function (request, response) {
   response.render('events.liquid', {
-   event: eventsJSON.data
+   voorbeeld: eventsJSON.data
   });
 })
 
@@ -64,7 +64,7 @@ app.get('/publicaties', async function (request, response) {
 
 app.get('/leden', async function (request, response) {
   response.render('leden.liquid', {
-    agency: agenciesVacanciesJSON.data 
+    agency: agenciesJSON.data 
   }) 
 })
 
