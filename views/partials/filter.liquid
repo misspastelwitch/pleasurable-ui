@@ -1,0 +1,65 @@
+<form class="filter-button-container" method="get" action="/">
+    <div class="inputbox">
+        <label for="search">Zoek vacatures</label>
+        <input type="text" id="search" name="search">
+    </div>
+
+
+<div class="filter-btns">
+    <div class="select-container">
+     <select class="select-btn">
+        <option value="all">Expertise</option>
+        <option value="frontend">Frontend Developer</option>
+        <option value="backend">Backend Developer</option>
+        <option value="fullstack">Fullstack Developer</option>
+        <option value="designer">Designer</option>
+        <option value="marketeer">Marketeer</option>
+    </select>
+ </div>
+
+    <div class="filter-btns">
+        <div class="select-container">
+            <label hidden for="titel">Locatie</label>
+            <select class="select-btn">
+              <option value="all">Locatie</option>
+              <option value="ams">Amsterdam</option>
+              <option value="dh">Den Haag</option>
+              <option value="ut">Utrecht</option>
+              <option value="bre">Breda</option>
+              <option value="hfd">Hooftdorp</option>
+            </select>
+        </div>
+
+        <div class="select-container">
+
+            <select name="soort">
+                <option value="">soort</option>
+                <option value="vacature">vacature</option>
+                <option value="stage">stage</option>
+            </select>
+        </div>
+
+        <div class="select-container">
+            <label hidden for="titel">uren</label>
+            <select name="hours">
+                <option value="">uren</option>
+                <option value="40">Voltijd 40 uur</option>
+                <option value="32">Voltijd 32 uur</option>
+                <option value="16">Deeltijd 16 uur</option>
+                <option value="stage">Stage</option>
+            </select>
+        </div>
+
+        <div class="select-container">
+            <label hidden for="titel">voertaal</label>
+            <select name="voertaal">
+                <option value="">voertaal</option>
+                <option value="nl">Nederlands</option>
+                <option value="eng">Engels</option>
+                <option value="eng-nl">Mixed</option>
+            </select>
+        </div>
+
+        <button type="submit">Submit</button>
+    </div>
+</form>
