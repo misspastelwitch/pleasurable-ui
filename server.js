@@ -8,14 +8,6 @@ import { Liquid } from 'liquidjs';
 // Maak een nieuwe Express applicatie aan, waarin we de server configureren
 const app = express()
 
-const agencies = await fetch("https://fdnd-agency.directus.app/items/dda_agencies");
-const agenciesJSON = await agencies.json();
-
-const publications = await fetch("https://fdnd-agency.directus.app/items/dda_publications")
-const publicationsJSON = await publications.json();
-
-const events = await fetch("https://fdnd-agency.directus.app/items/dda_events");
-const eventsJSON = await events.json();
 
 
 // Maak werken met data uit formulieren iets prettiger
@@ -28,6 +20,16 @@ app.use(express.static('public'))
 // Stel Liquid in als 'view engine'
 const engine = new Liquid()
 app.engine('liquid', engine.express())
+
+
+const agencies = await fetch("https://fdnd-agency.directus.app/items/dda_agencies");
+const agenciesJSON = await agencies.json();
+
+const publications = await fetch("https://fdnd-agency.directus.app/items/dda_publications")
+const publicationsJSON = await publications.json();
+
+const events = await fetch("https://fdnd-agency.directus.app/items/dda_events");
+const eventsJSON = await events.json();
 
 // Stel de map met Liquid templates in
 // Let op: de browser kan deze bestanden niet rechtstreeks laden (zoals voorheen met HTML bestanden)
@@ -46,7 +48,7 @@ app.get('/over-ons', async function (request, response) {
 
 app.get('/events', async function (request, response) {
   response.render('events.liquid', {
-   voorbeeld: eventsJSON.data
+   events: eventsJSON.data
   });
 })
 
@@ -54,9 +56,9 @@ app.get('/events', async function (request, response) {
 // zoek functie hier
 
 app.get('/publicaties', async function (request, response) {
-  response.render('publicaties.liquid'), {
+  response.render('publicaties.liquid', {
     publication: publicationsJSON.data
-  } 
+  });
 })
 
 // detailpaginas voor publicaties
@@ -64,7 +66,7 @@ app.get('/publicaties', async function (request, response) {
 
 app.get('/leden', async function (request, response) {
   response.render('leden.liquid', {
-    agency: agenciesJSON.data 
+    agencies: agenciesJSON.data
   }) 
 })
 
@@ -95,3 +97,4 @@ app.listen(app.get('port'), function () {
 
   console.log('Da only one website! 🔮')
 })
+
