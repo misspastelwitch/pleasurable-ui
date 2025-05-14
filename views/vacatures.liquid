@@ -81,7 +81,7 @@ Je hebt al een aantal jaar ervaring in strategie, maar nog belangrijker: je voel
         {% if appliedFor == vacature.id %}
         {% render './partials/loading.liquid' %}
             {% else %}
-        {% render 'partials/soliciteer.liquid', vacature: vacature %}
+        {% render './partials/soliciteer.liquid', vacature: vacature %}
 
         {% endif %}
 
