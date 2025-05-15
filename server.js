@@ -61,6 +61,19 @@ app.get('/publicaties', async function (request, response) {
   });
 })
 
+
+// detailpagina voor publicaties
+app.get('/publicaties/:id', async function (request, response) {       
+  const publicationParam = request.params.id;                              
+  const publicationFetch = await fetch(`https://fdnd-agency.directus.app/items/dda_publications/?fields=*.*&filter={"id":"${publicationParam}"}&limit=1`)
+  const publicationFetchJSON = await publicationFetch.json();
+
+  response.render('publicatiesdetail.liquid', {
+    publicationParam: publicationFetchJSON.data?.[0] || [],
+    publication: publicationsJSON.data
+  });
+});
+
 // detailpaginas voor publicaties
 // zoek functie hier
 
