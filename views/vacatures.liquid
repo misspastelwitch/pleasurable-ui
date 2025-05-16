@@ -1,4 +1,4 @@
-{% render 'partials/header.liquid', title: 'Vacatures' %}
+{% render 'partials/head.liquid', title: 'Vacatures' %}
 
 <header>
     <nav class="topnav">
@@ -86,7 +86,7 @@ Je hebt al een aantal jaar ervaring in strategie, maar nog belangrijker: je voel
         {% endif %}
           </section> {% endcomment %}
 
-  {% render 'partials/agencievac.liquid', vacatures: vacatures %}
+  {% render 'partials/agenciesvac.liquid', vacatures: vacatures %}
 
         
     {% comment %}
@@ -157,4 +157,4 @@ have you entered your email address correctly?
     })
   }
   </script>
-{% render 'partials/footer.liquid' %}
+{% render 'partials/foot.liquid' %}
