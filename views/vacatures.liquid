@@ -1,4 +1,4 @@
-{% render 'partials/head.liquid', title: 'Vacatures' %}
+{% render 'partials/header.liquid', title: 'Vacatures' %}
 
 <header>
     <nav class="topnav">
@@ -57,7 +57,7 @@
 </form>
 
 <main class="gridview">
-    <ul>
+    {% comment %} <ul>
         {% if vacatures %}
 
         {% for vacature in vacatures %}
@@ -84,8 +84,11 @@ Je hebt al een aantal jaar ervaring in strategie, maar nog belangrijker: je voel
         {% render './partials/soliciteer.liquid', vacature: vacature %}
 
         {% endif %}
+          </section> {% endcomment %}
 
+  {% render 'partials/agencievac.liquid', vacatures: vacatures %}
 
+        
     {% comment %}
 <!-- If verstuur is successful, show gelukt.liquid
 {% if verstuur  == "true" %}
@@ -97,18 +100,7 @@ have you entered your email address correctly?
 {% endif %}
 {% endcomment %}
 
-  </section>
-</li>
 
-</div>
-
-        <form>
-        </form>
-        {% endfor %}
-    </ul>
-    {% else %}
-    <p>Er zijn geen vacatures beschikbaar.</p>
-{% endif %}
 </main> 
 
 
