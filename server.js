@@ -87,8 +87,10 @@ app.get('/leden', async function (request, response) {
 // zoek functie
 
 app.get('/vacatures', async function (request, response) {
-  response.render('vacatures.liquid', {
-  })
+  const vacatureResponse = await fetch('https://fdnd-agency.directus.app/items/dda_agencies_vacancies')
+  const vacatureResponseJSON = await vacatureResponse.json();
+
+  response.render('vacatures.liquid', { vacatures: vacatureResponseJSON.data })
 })
 
 // detailpagina
