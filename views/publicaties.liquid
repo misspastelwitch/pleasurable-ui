@@ -9,12 +9,17 @@
 
 <div class="overview-publications">
     {% for publications in publication %}
-        <a href="/publicaties/{{ publication.id }}">
-            <img src="{% if publication.photo %}https://fdnd-agency.directus.app/assets/{{ publication.photo }}{% else %}https://media.istockphoto.com/id/887464786/vector/no-cameras-allowed-sign-flat-icon-in-red-crossed-out-circle-vector.jpg?s=612x612&w=0&k=20&c=LVkPMBiZas8zxBPmhEApCv3UiYjcbYZJsO-CVQjAJeU={% endif %}" alt="publicatie-foto">
+        <a href="/publicaties/{{ publications.id }}">
 
-            <h2 > {{ publication.title }} </h2>
-            <p class="topic-list"> {{ publication.topic }} </p>
-            <p class="intro-list"> {{ publication.intro }} </p>
+
+        <picture>
+            <source srcset="" type="">
+            <img src="{% if publications.photo %}https://fdnd-agency.directus.app/assets/{{ publication.photo }}{% else %}https://media.istockphoto.com/id/887464786/vector/no-cameras-allowed-sign-flat-icon-in-red-crossed-out-circle-vector.jpg?s=612x612&w=0&k=20&c=LVkPMBiZas8zxBPmhEApCv3UiYjcbYZJsO-CVQjAJeU={% endif %}" alt="publicatie-foto" loading="lazy">
+        </picture>
+
+            <h2 > {{ publications.title }} </h2>
+            <p class="topic-list"> {{ publications.topic }} </p>
+            <p class="intro-list"> {{ publications.intro }} </p>
         </a>
     {% endfor %}
 </div>
