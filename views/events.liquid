@@ -1,9 +1,48 @@
 {% include 'views/partials/header.liquid', title: 'DDA Publicaties' %}
 
+
 <h1>Events</h1>
 
-<p>{{ events.json }}</p>
+{% render 'partials/header.liquid', title: 'Events' %}
+
+<header>
+    <nav class="topnav">
+      <img src="/assets/DDAlogo.png" alt="logo" class="logo">
+
+       <div class="home">
+        <a href="https://dutchdigitalagencies.com/">Home</a>
+        </div>
 
 
+    </nav>
+  </header>
+
+  <header class="titles">
+    <h1>Events
+    <p>
+        Spraakmakende sprekers. Inspirerende kennissessies.
+         Events waar je écht bij wilt zijn.<br>waar je al je vakgenoten weer spreekt.
+         Versterk je bureau met kennis en inspiratie over bureaumanagement,<br>
+         leiderschap en de laatste ontwikkelingen.
+    </p>
+  </header>
+
+<main class="gridview">
+
+<section>
+    <ul>
+        {% if events %}
+
+        {% for event in events %}
+        <li>
+         <h3 class="title">{{event.title}}</h3>
+        <p>{{ events.json }}</p>
+
+        {% endif %}
+    </ul>
+</section>
+
+
+</main> 
 
 {% include 'views/partials/footer.liquid', title: 'DDA Publicaties' %}x
