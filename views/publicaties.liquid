@@ -1,27 +1,48 @@
 {% include 'views/partials/header.liquid', title: 'DDA Publicaties' %}
 
+<link rel="stylesheet" href="/style/stylesheet-2.css">
+<link rel="stylesheet" href="/style/stylesheet-publications.css">
+
 <section class="title-publications">
+  <a href="/" class="go-back-link">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4">
+      <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Ga terug
+  </a>
+  
+    <h1>Publicaties</h1>
+    <p>Om er voor te zorgen dat ook jij op de hoogte blijft ...</p>
+    </section>
 
-<a href="/">Ga terug</a>
-<h1> Publicaties </h1>
-<p>Om er voor te zorgen dat ook jij op de hoogte blijft van het laatste nieuws en interessante opinies met betrekking tot onze branche en digitale innovaties, delen we hier alle content die we of zelf hebben gecreëerd, bijvoorbeeld met input van onze leden, of verkregen hebben via één van onze partners.</p>
-</section>
-
-<div class="overview-publications">
-    {% for publications in publication %}
-        <a href="/publicaties/{{ publications.id }}">
-
-
-        <picture>
-            <source srcset="" type="">
-            <img src="{% if publications.photo %}https://fdnd-agency.directus.app/assets/{{ publication.photo }}{% else %}https://media.istockphoto.com/id/887464786/vector/no-cameras-allowed-sign-flat-icon-in-red-crossed-out-circle-vector.jpg?s=612x612&w=0&k=20&c=LVkPMBiZas8zxBPmhEApCv3UiYjcbYZJsO-CVQjAJeU={% endif %}" alt="publicatie-foto" loading="lazy">
-        </picture>
-
-            <h2 > {{ publications.title }} </h2>
-            <p class="topic-list"> {{ publications.topic }} </p>
-            <p class="intro-list"> {{ publications.intro }} </p>
+    <div class="publication-grid">
+      {% for publications in publication %}
+        <a href="{{ publications.id }}" class="publication-card">
+          <div class="publication-image">
+            {% if publications.photo %}
+              <img src="https://fdnd-agency.directus.app/assets/{{ publications.photo| img_url: 'large' }}" alt="{{ publications.title }}" loading="lazy" height="200p" width="200p">
+            {% else %}
+              <img src="{{ 'https://media.istockphoto.com/id/887464786/vector/no-cameras-allowed-sign-flat-icon-in-red-crossed-out-circle-vector.jpg?s=612x612&w=0&k=20&c=LVkPMBiZas8zxBPmhEApCv3UiYjcbYZJsO-CVQjAJeU=' | asset_url }}" alt="Placeholder image" loading="lazy" height="200p" width="200p">
+            {% endif %}
+          </div>
+          <h2 class="publication-title">{{ publications.title }}</h2>
+          <p class="publication-topic">
+            {% if publications.topic %}
+              {{ publications.topic }}
+            {% else %}
+              Publication
+            {% endif %}
+          </p>
+          <p class="publication-intro">
+            {% if publications.intro %}
+              {{ publications.intro }}
+            {% else %}
+              {{ publications.description | strip_html | truncatewords: 25 }}
+            {% endif %}
+          </p>
         </a>
-    {% endfor %}
+      {% endfor %}
+  </div>
 </div>
 
 <section class="laatste-nieuws-publications">

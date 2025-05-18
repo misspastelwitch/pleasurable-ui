@@ -1,12 +1,9 @@
-:root{
-
+:root {
     /* fonts desktop */
     --desktop-h1: 92px;
     --desktop-h2: 64px;
     --desktop-h3: 48px;
     --desktop-h4: 32px;
-    --desktop-h5: 24px;
-    --desktop-h6: 24px;
     --desktop-p: 18px;
     --desktop-subtext: 16px;
     
@@ -15,8 +12,6 @@
     --tablet-h2: 48px;
     --tablet-h3: 36px;
     --tablet-h4: 28px;
-    --tablet-h5: 22px;
-    --tablet-h6: 20px;
     --tablet-p: 16px;
     --tablet-subtext: 16px;
     
@@ -25,8 +20,6 @@
     --mobile-h2: 40px;
     --mobile-h3: 32px;
     --mobile-h4: 24px;
-    --mobile-h5: 18px;
-    --mobile-h6: 18px;
     --mobile-p: 16px;
     --mobile-subtext: 14px;
     
@@ -43,146 +36,83 @@
     --spacing-96: 96px;
     --spacing-104: 104px;
     --spacing-128: 128px;
-    
-    /* fonts */
-    --font-family-regular: Archivo, sans-serif;
-    --font-family-mono: MartianMono, monospace;
-    
+   
     /* colors */
     --color-black: #222226;
     --color-grey: #666666;
     --color-white: #ffffff;
     --color-blue: #364bf7;
     --color-yellow: #f7e19f;
-    
-    /* border */
-    --border: 1px #222226 solid;
-    --border-blue: 1px #364bf7 solid;
-    
-    
-    /* grid templates */
-    --grand-grid-colums: 1fr, repeat(12, 1fr), 1fr;
-    --grid-columns: 64px, repeat(12, 1fr), 64px;
-    --small-grid-columns: 16px, repeat(4, 1fr), 16px;
-    --grand-grid-gap: 32px;
+  }
+  
+  .font-archivo-semi {
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+  }
+  
+  .font-archivo {
+    font-family: "Archivo", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+  }
+  
+  .font-martian {
+    font-family: "Space Mono", monospace;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+  
+  .text-color-black {
+    color: var(--color-black);
+  }
+  
+  .text-color-grey {
+    color: var(--color-grey);
+  }
+  
+  .text-color-blue {
+    color: var(--color-blue);
+  }
+  
+  .bg-color-blue {
+    background-color: var(--color-blue);
+  }
+  
+  .hover\:bg-color-blue\/90:hover {
+    background-color: rgba(54, 75, 247, 0.9);
+  }
+  
+  .border-color-black {
+    border-color: var(--color-black);
+  }
+  
+  .hover\:border-color-blue:hover {
+    border-color: var(--color-blue);
+  }
+  
+  .group:hover .group-hover\:text-color-blue {
+    color: var(--color-blue);
+  }
+  
+  .group:hover .group-hover\:scale-105 {
+    transform: scale(1.05);
+  }
+  
+  @media (min-width: 768px) {
+    .text-desktop-h1 {
+      font-size: var(--desktop-h1);
     }
-    
-    .archivo-semi-bold {
-        font-family: "Archivo-semi-bold", sans-serif;
-        font-optical-sizing: auto;
-        letter-spacing: -4%;
-        font-weight: 700;
-        font-style: normal;
-        font-variation-settings:
-          "wdth" 100;
+  }
+  
+  @media (max-width: 768px) {
+    .text-tablet-h1 {
+      font-size: var(--tablet-h1);
     }
-    
-    .archivo-regular {
-        font-family: "Archivo", sans-serif;
-        font-optical-sizing: auto;
-        letter-spacing: -4%;
-        font-weight: 400;
-        font-style: normal;
+  }
+  
+  @media (max-width: 640px) {
+    .text-mobile-h1 {
+      font-size: var(--mobile-h1);
     }
-    
-    .martian-mono {
-        font-family: "Martian Mono", monospace;
-        font-optical-sizing: auto;
-        font-weight: 500;
-        letter-spacing: 0%;
-        font-style: normal;
-    }
-    
-    h1 {
-        font-family: "Archivo-semi-bold", sans-serif;
-        font-size: var(--desktop-h1);
-        text-transform: uppercase;
-    
-        @media (max-width:1200px) {
-            font-size: var(--tablet-h1);
-        }
-        @media (max-width:530px) {
-            font-size: var(--mobile-h1);
-        }
-    }
-    
-    h2 {
-        font-family: "Archivo-semi-bold", sans-serif;
-        font-size: var(--desktop-h2);
-        text-transform: uppercase;
-    
-        @media (max-width:1200px) {
-            font-size: var(--tablet-h2);
-        }
-        @media (max-width:530px) {
-            font-size: var(--mobile-h2);
-        }
-    }
-    
-    h3 {
-        font-family: "Archivo", sans-serif;
-        font-size: var(--desktop-h3);
-    
-        @media (max-width:1200px) {
-            font-size: var(--tablet-h3);
-        }
-        @media (max-width:530px) {
-            font-size: var(--mobile-h3);
-        }
-    }
-    
-    h4 {
-        font-family: "Archivo", sans-serif;
-        font-size: var(--desktop-h4);
-    
-        @media (max-width:1200px) {
-            font-size: var(--tablet-h4);
-        }
-        @media (max-width:530px) {
-            font-size: var(--mobile-h4);
-        }
-    }
-    
-    p {
-        font-family: "Archivo-semi-bold", sans-serif;
-        font-size: var(--desktop-p);
-    
-        @media (max-width:1200px) {
-            font-size: var(--tablet-p);
-        }
-        @media (max-width:530px) {
-            font-size: var(--mobile-p);
-        }
-    }
-    
-    .subtext {
-        font-family: "Martian Mono", monospace;
-        font-size: var(--desktop-subtext);
-    
-        @media (max-width:1200px) {
-            font-size: var(--tablet-subtext);
-        }
-        @media (max-width:530px) {
-            font-size: var(--mobile-subtext);
-        }
-    }
-    
-    nav {
-        font-family: var(--font-family-mono);
-    }
-    
-    .active {
-        color: var(--color-blue);
-    }
-    
-    .bold {
-        font-weight: 1000;
-    }
-
-
-* {
-    text-decoration: none;
-}
-    
-    
-    /* keyframes */
+  }

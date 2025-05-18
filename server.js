@@ -98,6 +98,21 @@ app.get('/lid-worden', async function (request, response) {
   response.render('lid-worden.liquid')
 })
 
+app.get('/search', async function (request, response) {
+  const query = request.query.q;
+  // hier wordt er een variable geselecteerd
+
+  if (!query) {
+    return response.status(400).json({ error: 'Query parameter "q" is required' });
+  }
+
+  const results = items.filter(item =>
+    item.name.toLowerCase().includes(query.toLowerCase())
+  );
+
+  response.json(results);
+});
+
 // form element
 
 
