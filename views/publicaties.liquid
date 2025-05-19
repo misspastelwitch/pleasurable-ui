@@ -1,7 +1,5 @@
 {% include 'views/partials/header.liquid', title: 'DDA Publicaties' %}
 
-<link rel="stylesheet" href="/style/stylesheet-2.css">
-<link rel="stylesheet" href="/style/stylesheet-publications.css">
 
 <section class="title-publications">
   <a href="/" class="go-back-link">
@@ -15,37 +13,58 @@
     <p>Om er voor te zorgen dat ook jij op de hoogte blijft ...</p>
     </section>
 
+    <section class="publication-overview">
+      {% render 'views/partials/searching-tool.liquid' %}
+
     <div class="publication-grid">
-      {% for publications in publication %}
-        <a href="{{ publications.id }}" class="publication-card">
-          <div class="publication-image">
-            {% if publications.photo %}
-              <img src="https://fdnd-agency.directus.app/assets/{{ publications.photo| img_url: 'large' }}" alt="{{ publications.title }}" loading="lazy" height="200p" width="200p">
-            {% else %}
-              <img src="{{ 'https://media.istockphoto.com/id/887464786/vector/no-cameras-allowed-sign-flat-icon-in-red-crossed-out-circle-vector.jpg?s=612x612&w=0&k=20&c=LVkPMBiZas8zxBPmhEApCv3UiYjcbYZJsO-CVQjAJeU=' | asset_url }}" alt="Placeholder image" loading="lazy" height="200p" width="200p">
-            {% endif %}
-          </div>
-          <h2 class="publication-title">{{ publications.title }}</h2>
-          <p class="publication-topic">
-            {% if publications.topic %}
-              {{ publications.topic }}
-            {% else %}
-              Publication
-            {% endif %}
-          </p>
-          <p class="publication-intro">
-            {% if publications.intro %}
-              {{ publications.intro }}
-            {% else %}
-              {{ publications.description | strip_html | truncatewords: 25 }}
-            {% endif %}
-          </p>
-        </a>
-      {% endfor %}
-  </div>
+        {% for publications in publication %}
+          <a href="/publicaties/{{ publications.id }}" class="publication-card">
+            <div class="publication-image">
+              {% if publications.photo %}
+                <img 
+                  src="https://fdnd-agency.directus.app/assets/{{ publications.photo }}" 
+                  alt="{{ publications.title | escape }}" 
+                  loading="lazy" 
+                  width="200" 
+                  height="200"
+                >
+              {% else %}
+                <img 
+                  src="https://media.istockphoto.com/id/887464786/vector/no-cameras-allowed-sign-flat-icon-in-red-crossed-out-circle-vector.jpg?s=612x612&w=0&k=20&c=LVkPMBiZas8zxBPmhEApCv3UiYjcbYZJsO-CVQjAJeU=" 
+                  alt="Placeholder image" 
+                  loading="lazy" 
+                  width="200" 
+                  height="200"
+                >
+              {% endif %}
+            </div>
+    
+            <h2 class="publication-title">{{ publications.title }}</h2>
+    
+            <p class="publication-topic">
+              {% if publications.topic %}
+                {{ publications.topic }}
+              {% else %}
+                Publication
+              {% endif %}
+            </p>
+    
+            <p class="publication-intro">
+              {% if publications.intro %}
+                {{ publications.intro }}
+              {% else %}
+                {{ publications.description | strip_html | truncatewords: 25 }}
+              {% endif %}
+            </p>
+          </a>
+        {% endfor %}
+    </div>
 </div>
 
+</section>
+
 <section class="laatste-nieuws-publications">
+  <h2> Laatste Publicaties </h2>
     {% comment %} hier komt een overzicht van het laatste nieuws {% endcomment %}
 </section>
 
