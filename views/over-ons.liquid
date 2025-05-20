@@ -1,5 +1,31 @@
-{% include 'views/partials/header.liquid', title: 'DDA Publicaties' %}
+{% include 'views/partials/header.liquid', title: 'DDA Over Ons' %}
 
-<h1>Over ons</h1>
 
-{% include 'views/partials/footer.liquid', title: 'DDA Publicaties' %}
+    <section class="titles">
+        <h1>Over Ons</h1>
+        <p>Dutch Digital Agencies (DDA) verenigt en vertegenwoordigt de 157 beste digitale bureaus van Nederland. <br>
+            Samen maken we de wereld om ons heen steeds een beetje slimmer. Stap voor stap, klik na klik.</p>
+    
+        <div class="home">
+            <a>Word Lid</a>
+            <a>Zoek een bureau</a>
+        </div>
+    </section>
+
+<h3>Sinds 2002 verbindt DDA de meest toonaangevende digitale bureaus.</h3>
+<p>We delen kennis en ervaringen, prikkelen met nieuwe ideeën en digitale toepassingen en laten zien wat we kunnen. <br>
+    Samen versterken we onze snelgroeiende branche en ontwikkelen het talent van morgen. We zijn trots op onze kennis en ons werk. 
+    En vertellen daar graag over op events en in de media. <br>
+Met onze leden staan we voor het beste dat de Nederlandse digitale industrie te bieden heeft. <br>
+ We zijn bedenkers en makers, ontwerpers en coders, testers en verslimmers. Flexibele teams met flexibele denkers. 
+ Altijd bezig met de volgende oplossing.</p>
+ <a class="home">Onze Leden</a>
+{% render 'partials/carousel-overons.liquid' %}
+
+<div class="container">
+    {% for event in events %}
+    {% render 'partials/event.liquid'%}
+    {% endfor %}
+</div>
+
+{% include 'views/partials/footer.liquid', title: 'DDA footer' %}

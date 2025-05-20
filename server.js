@@ -31,6 +31,8 @@ const publicationsJSON = await publications.json();
 const events = await fetch("https://fdnd-agency.directus.app/items/dda_events");
 const eventsJSON = await events.json();
 
+
+
 // Stel de map met Liquid templates in
 // Let op: de browser kan deze bestanden niet rechtstreeks laden (zoals voorheen met HTML bestanden)
 app.set('views', './views')

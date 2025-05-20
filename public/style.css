@@ -421,7 +421,7 @@ line-height: 1.5rem;
           }
       }
 
-
+/* OVER ONS */
 
 .bedrijf {
     align-items: center;
@@ -439,6 +439,129 @@ line-height: 1.5rem;
     margin-left: 5%;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+.partner-carousel-container-1, .partner-carousel-container-2{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.partner-logos-slide-1{  
+    animation: 15s slide-1 infinite linear;
+    display: flex;
+}
+
+@keyframes slide-1 {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.partner-logos-slide-2{    
+    animation: 15s slide-2 infinite linear;
+    display: flex;
+}
+
+@keyframes slide-2 {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.partner-carousel-container-1 > .partner-logos-slide-1 > img{
+    width: clamp(5em, 10vw, 15em);
+    height: clamp(5em, 10vw, 15em);
+}
+
+.partner-carousel-container-2 > .partner-logos-slide-2 > img{
+    width: clamp(5em, 10vw, 15em);
+    height: clamp(5em, 10vw, 15em);
+}
+
+.leden-section-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.5fr;
+    border-top: var(--border);
+
+    @media (min-width: 900px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.image-container picture {
+    width: 100%;
+    height: 100%;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* container 2 publicaties */
+.publication-container {
+    grid-column: 1;
+    grid-row: 2;
+
+    padding-top: 3em;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    justify-content: center;
+    align-items: center;
+
+    & .label {
+        grid-column: 1;
+        grid-row: 1;
+        align-self: center;
+        justify-self: center;
+
+        @media (min-width: 900px) {
+            display: none;
+        }
+    }
+
+    @media (min-width: 900px) {
+        grid-column: 2;
+        grid-row: 1;
+        padding-top: 0;
+    }
+
+
+    .publication-title {
+        grid-column: 1;
+        grid-row: 2;
+        align-self: center;
+        justify-self: center;
+        text-align: center;
+        line-height: 1em;
+    }
+
+    .publication-btn {
+        grid-column: 1;
+        grid-row: 3;
+        align-self: center;
+        justify-self: center;
+        padding-bottom: var(--spacing-24);
+    }
 }
 
 /* FOOTER */
