@@ -1,0 +1,107 @@
+.site-header {
+    background-color: var(--color-white);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px solid var(--color-black);
+  }
+  
+  .site-header a {
+    color: var(--color-black);
+    margin: 0 var(--spacing-16);
+    text-decoration: none;
+    position: relative;
+  }
+  
+  .site-header a:after {
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -4px;
+    background-color: var(--color-blue);
+    transform-origin: bottom right;
+    transition: var(--general-animation);
+  }
+  
+  .site-header a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  .site-header a.active {
+    color: var(--color-blue);
+  }
+  
+  .site-header a.active:after {
+    transform: scaleX(1);
+  }
+  
+  .site-footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: var(--spacing-48) var(--spacing-32);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-32);
+  }
+  
+  @media (min-width: 768px) {
+    .site-footer {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .footer-logo img {
+    max-width: var(--spacing-128);
+    height: auto;
+  }
+  
+  .footer-links ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5em;
+  }
+  
+  @media (min-width: 640px) {
+    .footer-links ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .footer-links a {
+    color: var(--color-white);
+    text-decoration: none;
+    position: relative;
+    transition: var(--general-animation);
+  }
+  
+  .footer-links a:after {
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: var(--spacing-8);
+    left: 0;
+    background-color: var(--color-blue);
+    transform-origin: bottom right;
+    transition: var(--general-animation);
+  }
+  
+  .footer-links a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  .footer-links a:hover {
+    color: var(--color-blue);
+  }
+  
+  .footer-address strong {
+    font-weight: 700;
+  }
+
+  .main-home {
+    background-color: black;
+  }

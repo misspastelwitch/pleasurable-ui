@@ -1,29 +1,4 @@
-* {
-  text-decoration: none;
-}
-
-
-  /* go-back */
-  
-  .publication-detail-back-link {
-    display: inline-flex;
-    align-items: center;
-    color: var(--color-blue);
-    margin-bottom: 1.5rem;
-    font-family: "Space Mono", monospace;
-    transition: transform 0.2s ease;
-  }
-  
-  .publication-detail-back-link:hover {
-    transform: translateX(-3px);
-  }
-  
-  .publication-detail-back-link svg {
-    margin-right: var(--spacing-16);
-    height: var(--spacing-16);
-    width: var(--spacing-16);
-  }
-
+/* General Layout */
 .title-publications {
     max-width: 100%;
     padding: 2em;
@@ -32,15 +7,30 @@
   .title-publications a.back-link {
     display: inline-flex;
     align-items: center;
-    color: var(--color-blue);
-    margin-bottom: 1.5em;
+    color: #005BBB; /* Tailwind's 'text-color-blue' */
+    margin-bottom: 1.5rem;
     font-family: 'Martian Mono', monospace;
+    text-decoration: none;
   }
   
   .title-publications a.back-link svg {
     margin-right: 0.5em;
-    height: var(--spacing-16);
-    width: var(--spacing-16);
+    height: 1em;
+    width: 1em;
+  }
+  
+  .title-publications h1 {
+    font-size: 3em; 
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 1.5em;
+    font-family: 'Archivo SemiExpanded', sans-serif;
+  }
+  
+  @media (min-width: 768px) {
+    .title-publications h1 {
+      font-size: 4.5em; 
+    }
   }
   
   .title-publications p {
@@ -49,9 +39,9 @@
   }
   
   .overview-publications {
-    max-width: 80em;
+    max-width: 80rem;
     margin: 0 auto;
-    padding: 3em 1em;
+    padding: 3rem 1rem;
   }
   
   .searching-tool-publications {
@@ -186,44 +176,4 @@
 
   .svg-searching-tool {
     height: 50px;
-  }
-
-  .publication-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.75em 1.5em;
-    background-color: var(--color-blue);
-    color: var(--color-white);
-    font-family: "Space Mono", monospace;
-    font-size: 1rem;
-    border: none;
-    border-radius: 0.25em;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  /* button states */
-  
-  .publication-button:hover {
-    background-color: var(--color-blue);
-    transform: translateY(-1em);
-    box-shadow: var(--shadow);
-  }
-  
-  .publication-button:active {
-    transform: translateY(0);
-    box-shadow: none;
-  }
-  
-  .publication-button:focus {
-    outline: 2px solid var(--color-black);
-    outline-offset: 2px;
-    transition-duration: 0.3s;
-    transition: all 0.2s ease;
-  }
-  
-  .publication-button:disabled {
-    opacity: 0.6;
-    background-color: var(--color-grey);
   }

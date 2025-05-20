@@ -1,26 +1,77 @@
-{% include 'views/partials/header.liquid', title: 'DDA Publicaties' %}
-
-<section class="title-publications-detail">
-    <a href="/"> Ga terug </a>
-    <h1> {{ publication.title }} </h1>
-    <p>Om er voor te zorgen dat ook jij op de hoogte blijft van het laatste nieuws en interessante opinies met betrekking tot onze branche en digitale innovaties, delen we hier alle content die we of zelf hebben gecreëerd, bijvoorbeeld met input van onze leden, of verkregen hebben via één van onze partners.</p>
+{% render 'views/partials/head.liquid', title: 'DDA Publicaties' %}
+{% render 'views/partials/header.liquid', title: 'DDA Publicaties' %}
+  
+<section class="title-publication-detail">
+  <div class="publication-detail-wrapper">
+    <a href="/publicaties" class="publication-detail-back-link">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4">
+        <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Terug naar publicaties
+    </a>
 </section>
 
-<section class="intro-publication-detail">
-    <p>{{ publication.intro }}</p>
+<section>
+
+</section class="content-publication-detail">
+    <article class="publication-detail-article">
+
+      {% if publication.photo %}
+        <div class="publication-detail-image">
+          <img 
+            src="https://fdnd-agency.directus.app/assets/{{ publication.photo }}" 
+            alt="{{ publication.title }}"
+          />
+        </div>
+      {% endif %}
+
+    <div class="content-publication-detail">
+          {{ publication.content }}
+    </div>
+
+</section>
+<section class="commentsection-publications-detail">
+          <h3 class="publication-detail-comments-title">Laat een reactie achter</h3>
+          
+          <form action="/comments" method="post" class="publication-detail-comment-form">
+            <input type="hidden" name="publication_id" value="{{ publication.id }}">
+            
+            <div class="comment-form-field">
+              <textarea name="comment" placeholder="Schrijf hier wat je vindt..." class="publication-detail-textarea"required></textarea>
+            </div>
+            
+            <div class="comment-form-actions">
+              <div class="comment-form-name">
+                <input type="text" name="name" placeholder="naam..." class="publication-detail-input" required>
+            </div>
+              
+            <div class="comment-form-emojis">
+                <label class="emoji-button-laugh">
+                  <input type="radio" name="emoji" value="😂" class="sr-only">
+                  <span class="emoji-icon">😂</span>
+                </label>
+                <label class="emoji-button-cry">
+                  <input type="radio" name="emoji" value="😭" class="sr-only">
+                  <span class="emoji-icon">😭</span>
+                </label>
+                <label class="emoji-button-angry">
+                  <input type="radio" name="emoji" value="😡" class="sr-only">
+                  <span class="emoji-icon">😡</span>
+                </label>
+                <label class="emoji-button-surprised">
+                  <input type="radio" name="emoji" value="😱" class="sr-only">
+                  <span class="emoji-icon">😱</span>
+                </label>
+            </div>
+              
+              <button type="submit" class="button-publications">
+                <span>Verzend</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4">
+                  <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13">
+                </svg>
+              </button>
+          </form>
 </section>
 
-<section class="photo-publications-detail">
-    <img src="{% if publication.photo %}https://fdnd-agency.directus.app/assets/{{ publication.photo }}{% else %}https://media.istockphoto.com/id/887464786/vector/no-cameras-allowed-sign-flat-icon-in-red-crossed-out-circle-vector.jpg?s=612x612&w=0&k=20&c=LVkPMBiZas8zxBPmhEApCv3UiYjcbYZJsO-CVQjAJeU={% endif %}">
-</section>
 
-<section class="content-publications-detail">
-    {{ publication.content }}
-</section>
-
-<section class="comment-publications-detail">
-    {% comment %} hier komen de comments van {% endcomment %}
-</section>
-
-
-{% include 'views/partials/footer.liquid', title: 'DDA Publicaties' %}
+{% render 'views/partials/footer.liquid', title: 'DDA Publicaties' %}

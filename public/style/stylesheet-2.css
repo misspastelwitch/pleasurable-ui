@@ -42,8 +42,105 @@
     --color-grey: #666666;
     --color-white: #ffffff;
     --color-blue: #364bf7;
+    --color-light-blue: #BDC5FF;
+    --color-dark-blue:#081792;
     --color-yellow: #f7e19f;
+
+    /* shadow */
+    --shadow: 0 4px 6px rgba(54, 75, 247, 0.2);
+
+    /* animations */
+    --general-animation: transform 0.3s ease-out;
   }
+
+  /* standard fontsizes */
+  h1 {
+    font-family: "Archivo-semi-bold", sans-serif;
+    font-size: var(--desktop-h1);
+    text-transform: uppercase;
+
+    @media (max-width:1200px) {
+        font-size: var(--tablet-h1);
+    }
+    @media (max-width:530px) {
+        font-size: var(--mobile-h1);
+    }
+}
+
+h2 {
+    font-family: "Archivo-semi-bold", sans-serif;
+    font-size: var(--desktop-h2);
+    text-transform: uppercase;
+
+    @media (max-width:1200px) {
+        font-size: var(--tablet-h2);
+    }
+    @media (max-width:530px) {
+        font-size: var(--mobile-h2);
+    }
+}
+
+h3 {
+    font-family: "Archivo", sans-serif;
+    font-size: var(--desktop-h3);
+
+    @media (max-width:1200px) {
+        font-size: var(--tablet-h3);
+    }
+    @media (max-width:530px) {
+        font-size: var(--mobile-h3);
+    }
+}
+
+h4 {
+    font-family: "Archivo", sans-serif;
+    font-size: var(--desktop-h4);
+
+    @media (max-width:1200px) {
+        font-size: var(--tablet-h4);
+    }
+    @media (max-width:530px) {
+        font-size: var(--mobile-h4);
+    }
+}
+
+p {
+    font-family: "Archivo-semi-bold", sans-serif;
+    font-size: var(--desktop-p);
+
+    @media (max-width:1200px) {
+        font-size: var(--tablet-p);
+    }
+    @media (max-width:530px) {
+        font-size: var(--mobile-p);
+    }
+}
+
+.subtext {
+    font-family: "Martian Mono", monospace;
+    font-size: var(--desktop-subtext);
+
+    @media (max-width:1200px) {
+        font-size: var(--tablet-subtext);
+    }
+    @media (max-width:530px) {
+        font-size: var(--mobile-subtext);
+    }
+}
+
+nav {
+    font-family: var(--font-family-mono);
+}
+
+.active {
+    color: var(--color-blue);
+}
+
+.bold {
+    font-weight: 1000;
+}
+
+  
   
   .font-archivo-semi {
     font-family: "Archivo", sans-serif;
