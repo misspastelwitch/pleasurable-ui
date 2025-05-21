@@ -451,7 +451,31 @@ line-height: 1.5rem;
           }
       }
 
+/* Over Ons */
+.over-ons-video {
+box-sizing: border-box;
+color: #000000;
+display: block;
+line-height: 32px;
+padding-inline-end: 48px;
+padding-block-start: 48px;
+scroll-padding-top: 129px;
+}
 
+.over-ons-p{
+box-sizing: border-box;
+color: #000000;
+display: block;
+line-height: 32px;
+padding-inline-end: 48px;
+padding-block-start: 48px;
+scroll-padding-top: 129px;
+grid-column-end: span 7;
+}
+
+.over-ons-p-left{
+padding: 48px;
+}
 
 .bedrijf {
     align-items: center;
