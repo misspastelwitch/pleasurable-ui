@@ -93,6 +93,19 @@ app.get('/vacatures', async function (request, response) {
   response.render('vacatures.liquid', { vacatures: vacatureResponseJSON.data })
 })
 
+app.post('/vacatures', async function (request, response)  {
+  const { title, locatie, hours } = request.body;
+
+  // Send the data to the API
+  await fetch('https://fdnd-agency.directus.app/items/dda_agencies_vacancies', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ title, locatie, hours })
+  });
+
+  response.redirect(303,'/');
+});
+
 // detailpagina
 // zoek functie
 
