@@ -3,11 +3,28 @@
 
 
  <section class="titles">
-    <img src="/public/assets/logo.jpg" alt="logo" class="logo">
     <h1>De beste digitale bureaus van nederland</h1>
     <p>Dutch Digital Agencies (DDA) verenigt en vertegenwoordigt de 157 beste digitale bureaus van Nederland.<br>
          Samen maken we de wereld om ons heen steeds een beetje slimmer.<br> Stap voor stap, klik na klik.</p>
-         <a href="/views/over-ons.liquid">Word lid</a>
-        <a href="/views/vacatures.liquid">Zoek een bureau</a>
-  </section>
 
+         <div class="hero-links">
+            <a class="zoek-een-bureau-link" href="/zoek-een-bureau">Zoek een bureau
+            </a>
+            <a class="zoek-een-bureau-link" href="/zoek-een-bureau">Word lid
+            </a>
+        </div>
+
+        {% render 'partials/carousel-overons.liquid' %}
+        
+        <h2>Hier kan je ons de komende tijd vinden</h2>
+        <a>Ons events</a>
+
+        <div class="event-main-container">
+
+        </div>
+
+        <h2>De beste bureaus zoeken de beste mensen</h2>
+        <a>Alle vacatures</a>
+  {% render 'partials/news-ad.liquid' %}
+  </section>
+{% render 'partials/footer.liquid' %}
