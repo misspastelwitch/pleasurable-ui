@@ -13,7 +13,7 @@
   </header>
 
   <header class="titles">
-    <h1>ONZE VACATURES</h1>
+    <h1>VACATURES</h1>
     <p>Verslim je carrière bij de beste digitale bureaus van Nederland.<br>
      Pak je rol als developer of designer, researcher, als scrum master of marketeer,
      als strateeg.<br> Start of groei door – en laat zien wat je kan.</p>
@@ -55,6 +55,36 @@
     <button type="submit">Filter</button>
     </div>
 </form>
+
+<section class="add-vacature">
+  <button popovertarget="mypopover" class="add-button">
+      <p>+</p>
+      <p>VOEG VACATURE TOE</p>
+  </button>
+
+  <dialog popover id="mypopover">
+      <button popovertarget="mypopover" popovertargetaction="hide" class="popup-button">x</button>
+
+      <form method="post"> 
+          <label>
+              Titel:
+              <input type="text" name="title">
+          </label>
+
+          <label>
+              Locatie:
+              <input type="text" name="locatie">
+          </label>
+
+          <label>
+              Uren:
+              <input type="text" name="hours">
+          </label>
+
+          <button type="submit">Verstuur!</button>
+      </form>
+  </dialog>
+</section>
 
 <main class="gridview">
     {% comment %} <ul>
