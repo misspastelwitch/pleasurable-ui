@@ -1,6 +1,10 @@
 {% render 'views/partials/head.liquid', title: 'DDA Publicaties' %}
-{% render 'views/partials/header.liquid', title: 'DDA Publicaties' %}
+{% comment %} {% render 'views/partials/header.liquid', title: 'DDA Publicaties' %} {% endcomment %}
 
+<link href="../style/style-publications.css" rel="stylesheet">
+<link href="../style/style-publications-detail.css" rel="stylesheet">
+<link href="../style/style-general.css" rel="stylesheet">
+<link href="../style/stylesheet-2.css" rel="stylesheet">
 
 <section class="title-publications">
   <a href="/" class="go-back-button">
@@ -82,4 +86,4 @@
   </section>
   
   
-  {% render 'views/partials/footer.liquid', title: 'DDA Publicaties' %}
+  {% render 'views/partials/foot.liquid', title: 'DDA Publicaties' %}
