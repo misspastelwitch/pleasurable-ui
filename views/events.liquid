@@ -1,21 +1,21 @@
+{% render 'views/partials/head.liquid', title: 'Vacatures' %}
 
-{% render 'partials/header.liquid', title: 'Events' %}
+<link href="../style/style.css" rel="stylesheet">
+<link href="../style/stylesheet.css" rel="stylesheet">
 
 <header>
     <nav class="topnav">
-      <img src="/assets/logo.jpg" alt="logo" class="logo">
+      <img src="../assets/DDAlogo.png" alt="logo" class="logo" height="100px" width="140px" alt="logo-dda">
 
        <div class="home">
         <a href="https://dutchdigitalagencies.com/">Home</a>
         </div>
-
-
     </nav>
   </header>
 
   <header class="titles">
-    <h1>Events
-    <p>
+    <h1>Events</h1>
+        <p>
         Spraakmakende sprekers. Inspirerende kennissessies.
          Events waar je écht bij wilt zijn.<br>waar je al je vakgenoten weer spreekt.
          Versterk je bureau met kennis en inspiratie over bureaumanagement,<br>
@@ -23,21 +23,8 @@
     </p>
   </header>
 
+
 <main class="gridview">
-
-<section>
-    <ul>
-        {% if events %}
-
-        {% for event in events %}
-        <li>
-         <h3 class="title">{{event.title}}</h3>
-        <p>{{ events.json }}</p>
-
-        {% endif %}
-
-    </ul>
-</section>
 
 {% render 'partials/carousel-overons.liquid' %}
 
@@ -45,4 +32,4 @@
 
 </main> 
 
-{% include 'views/partials/foot.liquid', title: 'DDA Publicaties' %}
+  {% render 'views/partials/foot.liquid', title: 'DDA Publicaties' %}
