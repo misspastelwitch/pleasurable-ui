@@ -1,20 +1,24 @@
-.site-header {
+header {
+    display: inline-flex;
+    justify-content: center;
+}
+.navigation {
     background-color: var(--color-white);
     padding: 1rem 2rem;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    flex-direction: column; 
+    align-items: flex-end;  
     border-bottom: 1px solid var(--color-black);
   }
   
-  .site-header a {
+  .navigation a {
     color: var(--color-black);
     margin: 0 var(--spacing-16);
     text-decoration: none;
-    position: relative;
+    font-family: monospace;
   }
   
-  .site-header a:after {
+  .navigation a:after {
     position: absolute;
     width: 100%;
     transform: scaleX(0);
@@ -25,28 +29,41 @@
     transition: var(--general-animation);
   }
   
-  .site-header a:hover:after {
+  .navigation a:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
+    text-decoration: underline;
   }
   
-  .site-header a.active {
+  .navigation a.active {
     color: var(--color-blue);
   }
   
-  .site-header a.active:after {
+  .navigation a.active:after {
     transform: scaleX(1);
   }
   
-  .site-footer {
-    background-color: var(--color-black);
-    color: var(--color-white);
+  .navigation {
+    background-color: var(--color-white);
+    color: var(--color-black);
     padding: var(--spacing-48) var(--spacing-32);
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-32);
   }
   
+  footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+  }
+
+  /* footer */
   @media (min-width: 768px) {
     .site-footer {
       grid-template-columns: repeat(3, 1fr);
@@ -59,9 +76,11 @@
   }
   
   .footer-links ul {
+    list-style: none;
     display: grid;
+    font-family: monospace;
     grid-template-columns: 1fr;
-    gap: 0.5em;
+    gap: var(--spacing-16);
   }
   
   @media (min-width: 640px) {
@@ -105,3 +124,23 @@
   .main-home {
     background-color: black;
   }
+
+  /* seraching tool */
+    .searching-tool {
+      display: flex;
+    }
+
+    .button-searching-tool {
+      background-color: var(--color-blue);
+      color: var(--color-white);
+      padding: 1em;
+    }
+
+    .button-searching-tool:hover {
+      background-color: var(--color-dark-blue);
+    }
+  
+    .svg-searching-tool {
+      height: var(--spacing-32);
+    }
+    
