@@ -1,27 +1,85 @@
-{% include 'views/partials/head.liquid', title: 'DDA Publicaties' %}
+{% render 'views/partials/head.liquid', title: 'DDA Publicaties' %}
+{% render 'views/partials/header.liquid', title: 'DDA Publicaties' %}
+
 
 <section class="title-publications">
+  <a href="/" class="go-back-button">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4">
+      <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Ga terug
+  </a>
+  
+    <h1>Publicaties</h1>
+    <p>Om er voor te zorgen dat ook jij op de hoogte blijft ...</p>
+    </section>
 
-<a href="/">Ga terug</a>
-<h1> Publicaties </h1>
-<p>Om er voor te zorgen dat ook jij op de hoogte blijft van het laatste nieuws en interessante opinies met betrekking tot onze branche en digitale innovaties, delen we hier alle content die we of zelf hebben gecreëerd, bijvoorbeeld met input van onze leden, of verkregen hebben via één van onze partners.</p>
-</section>
+    <section class="publication-overview">
+      <div class="titlebar-publications">
+      {% render 'views/partials/searching-tool.liquid' %}
 
-<div class="overview-publications">
-    {% for publications in publication %}
-        <a href="/publicaties/{{ publication.id }}">
-            <img src="{% if publication.photo %}https://fdnd-agency.directus.app/assets/{{ publication.photo }}{% else %}https://media.istockphoto.com/id/887464786/vector/no-cameras-allowed-sign-flat-icon-in-red-crossed-out-circle-vector.jpg?s=612x612&w=0&k=20&c=LVkPMBiZas8zxBPmhEApCv3UiYjcbYZJsO-CVQjAJeU={% endif %}" alt="publicatie-foto">
+      <div id="buttonstopic-publication">
+        <button class="button-filter" type="button" data-topic="Column">Column</button>
+        <button class="button-filter" type="button" data-topic="Awards">Awards</button>
+        <button class="button-filter" type="button" data-topic="DDA nieuws">DDA nieuws</button>
+        <button class="button-filter" type="button" data-topic="Algemeen">Algemeen</button>
+        <button class="button-filter" type="button" data-topic="Digitale Inclusie">Digitale Inclusie</button>
+        <button class="button-filter" type="button" data-topic="Branche">Branche</button>
+        <button class="button-filter" type="button" data-topic="Belangenhartiging">Belangenhartiging</button>
+    </div>
+      </div>
 
-            <h2 > {{ publication.title }} </h2>
-            <p class="topic-list"> {{ publication.topic }} </p>
-            <p class="intro-list"> {{ publication.intro }} </p>
-        </a>
-    {% endfor %}
-</div>
-
-<section class="laatste-nieuws-publications">
-    {% comment %} hier komt een overzicht van het laatste nieuws {% endcomment %}
-</section>
-
-
-{% include 'views/partials/foot.liquid', title: 'DDA Publicaties' %}
+    <div class="publication-grid">
+        {% for publications in publication %}
+          <a href="/publicaties/{{ publications.id }}" class="publication-card">
+            <div class="publication-image">
+              {% if publications.photo %}
+                <img 
+                  src="https://fdnd-agency.directus.app/assets/{{ publications.photo }}" 
+                  alt="{{ publications.title | escape }}" 
+                  loading="lazy" 
+                  width="200" 
+                  height="200"
+                >
+              {% else %}
+                <img 
+                  src="https://media.istockphoto.com/id/887464786/vector/no-cameras-allowed-sign-flat-icon-in-red-crossed-out-circle-vector.jpg?s=612x612&w=0&k=20&c=LVkPMBiZas8zxBPmhEApCv3UiYjcbYZJsO-CVQjAJeU=" 
+                  alt="Placeholder image" 
+                  loading="lazy" 
+                  width="200" 
+                  height="200"
+                >
+              {% endif %}
+              </div>
+    
+              <h2 class="publication-title">{{ publications.title }}</h2>
+      
+              <p class="publication-topic">
+                {% if publications.topic %}
+                  {{ publications.topic }}
+                {% else %}
+                  Publication
+                {% endif %}
+              </p>
+      
+              <p class="publication-intro">
+                {% if publications.intro %}
+                  {{ publications.intro }}
+                {% else %}
+                  {{ publications.description | strip_html | truncatewords: 25 }}
+                {% endif %}
+              </p>
+            </a>
+          {% endfor %}
+      </div>
+  </div>
+  
+  </section>
+  
+  <section class="laatste-nieuws-publications">
+    <h2> Laatste Publicaties </h2>
+      {% comment %} hier komt een overzicht van het laatste nieuws {% endcomment %}
+  </section>
+  
+  
+  {% render 'views/partials/footer.liquid', title: 'DDA Publicaties' %}
