@@ -173,36 +173,6 @@
   }
   
 
-  /* searching tool */
-  .searching-tool {
-    display: flex;
-
-  }
-  .button-searching-tool {
-    background-color: var(--color-blue);
-    color: var(--color-white);
-    padding: 1em;
-  }
-
-  .svg-searching-tool {
-    height: 50px;
-  }
-
-  .publication-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.75em 1.5em;
-    background-color: var(--color-blue);
-    color: var(--color-white);
-    font-family: "Space Mono", monospace;
-    font-size: 1rem;
-    border: none;
-    border-radius: 0.25em;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
   /* button states */
   
   .publication-button:hover {

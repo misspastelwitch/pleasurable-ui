@@ -68,7 +68,7 @@ app.get('/publicaties/:id', async function (request, response) {
   const publicationFetch = await fetch(`https://fdnd-agency.directus.app/items/dda_publications/?fields=*.*&filter={"id":"${publicationParam}"}&limit=1`)
   const publicationFetchJSON = await publicationFetch.json();
 
-  response.render('publicatiesdetail.liquid', {
+  response.render('publicaties-detail.liquid', {
     publicationParam: publicationFetchJSON.data?.[0] || [],
     publication: publicationsJSON.data
   });
