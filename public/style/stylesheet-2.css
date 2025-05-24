@@ -213,7 +213,3 @@ nav {
       font-size: var(--mobile-h1);
     }
   }
-
-  body {
-    margin: var(--spacing-32);
-  }

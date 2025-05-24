@@ -301,6 +301,7 @@ iframe[data-astro-cid-coes4cfc]{
     justify-content:center;
     gap:var(--spacing-16)
 }
+
 video-embed[data-astro-cid-coes4cfc]{
     margin-block:20px
 }
@@ -447,7 +448,7 @@ figure[data-astro-cid-3scbp62l]{
     text-decoration:none;
     text-transform:uppercase
 }
-.footer{
+/* .footer{
     position:sticky;
     top:100vh
 }
@@ -469,7 +470,7 @@ figure[data-astro-cid-3scbp62l]{
     .footer .column:last-child{
         padding:var(--spacing-24) var(--spacing-48)
     }
-}
+} */
 .menu__burger-button .button__icon,.menu__close-button .button__icon{
     height:2rem;
     margin:.25rem;
