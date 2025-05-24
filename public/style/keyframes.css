@@ -1,0 +1,30 @@
+
+@keyframes parade {
+    0% {
+        transform: translate(0);
+    }
+
+    100% {
+        transform: translate(-25%);
+    }
+}
+
+@keyframes parade-reversed {
+    0% {
+        transform: translate(0);
+    }
+
+    100% {
+        transform: translate(25%);
+    }
+}
+
+@keyframes loading {
+    0%{
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}

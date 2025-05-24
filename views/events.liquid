@@ -4,7 +4,7 @@
 <link href="../style/style.css" rel="stylesheet">
 <link href="../style/stylesheet.css" rel="stylesheet">
 
-<header>
+{% comment %} <header>
     <nav class="topnav">
       <img src="../assets/DDAlogo.png" alt="logo" class="logo" height="100px" width="140px" alt="logo-dda">
 
@@ -12,7 +12,7 @@
         <a href="https://dutchdigitalagencies.com/">Home</a>
         </div>
     </nav>
-  </header>
+  </header> {% endcomment %}
 
   <header class="titles">
     <h1>Events</h1>
@@ -28,8 +28,6 @@
 <main class="gridview">
 
 {% render 'partials/carousel-overons.liquid' %}
-
-<p>{{ events.json }}</p>
 
 </main> 
 

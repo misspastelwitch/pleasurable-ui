@@ -6,7 +6,7 @@
 } */
 
   /* Header bar */
-  .topnav {
+  /* .topnav {
     align-items: center; 
     justify-content: space-between; 
     display: flex;
@@ -30,7 +30,7 @@
     font-weight: var(--standard-font-weight);
     text-transform: uppercase;
 
-}
+} */
 
 
 @media (max-width: 750px) {
