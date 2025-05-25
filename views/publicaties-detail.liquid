@@ -16,28 +16,47 @@
 </section>
 
 <section>
-</section class="content-publication-detail">
-    <article class="publication-detail-article">
-
-      {% if publications.photo %}
-        <div class="publication-detail-image">
-          <img 
-            src="https://fdnd-agency.directus.app/assets/{{ publications.photo }}" 
-            alt="{{ publications.title }}"
-          />
-        </div>
-      {% endif %}
-
-    <div class="content-publication-detail">
-          {{ publications.content }}
-    </div>
-
+  <section id="titel-pagina" style="view-transition-name: post-{{ publication.id }}">
+    <h1> {{ publication.title }} </h1>
+    <p>  {{ publication.intro }} </p>
 </section>
+
+<section id="content-publicatie">
+    {{ publication.content }}
+</section>
+
+
+<section class="comment-section">
+    {% assign messageszero = messages %}
+    {% if messageszero.size < 1 %}
+        <div class="empty-state" id="empty">
+            <p>Er zijn hier nog geen reacties</p>
+        </div>
+    {% else %}
+    {% for message in messageszero %}
+        <div class="comment-1">
+            <div class="name">
+                <h4>{{ message.from | replace: "Miel_", "" }}</h4>
+            </div>
+            <div class="emoji">
+                {% if message.emoji == 'smile' %}😊{% endif %}
+                {% if message.emoji == 'surprise' %}😲{% endif %}
+                {% if message.emoji == 'tired' %}😩{% endif %}
+                {% if message.emoji == 'cry' %}😢{% endif %}
+            </div>
+            <div class="comment">
+                <p>{{ message.text }}</p>
+            </div>
+        </div>
+    {% endfor %}
+    {% endif %}
+</section>
+
 <section class="commentsection-publications-detail">
           <h3 class="publication-detail-comments-title">Laat een reactie achter</h3>
           
           <form action="/comments" method="post" class="publication-detail-comment-form">
-            <input type="hidden" name="publication_id" value="{{ publications.id }}">
+            <input type="hidden" name="publication_id" value="{{ publication.id }}">
             
             <div class="comment-form-field">
               <textarea name="comment" placeholder="Schrijf hier wat je vindt..." class="publication-detail-textarea"required></textarea>

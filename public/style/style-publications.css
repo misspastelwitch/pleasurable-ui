@@ -1,20 +1,17 @@
 /* General Layout */
 .title-publications {
     max-width: 100%;
-    padding: 2em;
   }
   
   .title-publications a.back-link {
     display: inline-flex;
     align-items: center;
     color: #005BBB; /* Tailwind's 'text-color-blue' */
-    margin-bottom: 1.5rem;
     font-family: 'Martian Mono', monospace;
     text-decoration: none;
   }
   
   .title-publications a.back-link svg {
-    margin-right: 0.5em;
     height: 1em;
     width: 1em;
   }
