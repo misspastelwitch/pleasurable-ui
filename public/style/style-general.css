@@ -224,3 +224,10 @@ main{
   top: var(--spacing-8);
   align-items: center;
 }
+
+/* empty-state */
+
+.empty-state{
+  border-top: var(--border);
+  border-bottom: var(--border);
+}

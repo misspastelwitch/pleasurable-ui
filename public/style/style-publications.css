@@ -1,6 +1,7 @@
 /* General Layout */
 .title-publications {
     max-width: 100%;
+    margin: var(--spacing-32);
   }
   
   .title-publications a.back-link {

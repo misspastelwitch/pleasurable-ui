@@ -21,17 +21,15 @@
     <p>  {{ publication.intro }} </p>
 </section>
 
-<section id="content-publicatie">
+<section id="content-publication-detail">
     {{ publication.content }}
 </section>
 
 
-<section class="comment-section">
+<section class="comment-section-publication-detail">
     {% assign messageszero = messages %}
     {% if messageszero.size < 1 %}
-        <div class="empty-state" id="empty">
-            <p>Er zijn hier nog geen reacties</p>
-        </div>
+        {% render 'views/partials/empty-state.liquid' %}
     {% else %}
     {% for message in messageszero %}
         <div class="comment-1">
@@ -52,48 +50,66 @@
     {% endif %}
 </section>
 
-<section class="commentsection-publications-detail">
-          <h3 class="publication-detail-comments-title">Laat een reactie achter</h3>
+<section class="comment-form-publications-detail">
           
-          <form action="/comments" method="post" class="publication-detail-comment-form">
+          <form action="/publicatie/{{ publication.id }}" method="post">
             <input type="hidden" name="publication_id" value="{{ publication.id }}">
             
-            <div class="comment-form-field">
+            <div class="text-comment">
               <textarea name="comment" placeholder="Schrijf hier wat je vindt..." class="publication-detail-textarea"required></textarea>
             </div>
             
-            <div class="comment-form-actions">
-              <div class="comment-form-name">
+            <div class="name-comment">
                 <input type="text" name="name" placeholder="naam..." class="publication-detail-input" required>
             </div>
 
-<div class="comment-form-emojis">
-    <label class="emoji-button-laugh">
-      <input type="radio" name="emoji" value="😂" class="sr-only">
-      <span class="emoji-icon">😂</span>
-    </label>
-    <label class="emoji-button-cry">
-      <input type="radio" name="emoji" value="😭" class="sr-only">
-      <span class="emoji-icon">😭</span>
-    </label>
-    <label class="emoji-button-angry">
-      <input type="radio" name="emoji" value="😡" class="sr-only">
-      <span class="emoji-icon">😡</span>
-    </label>
-    <label class="emoji-button-surprised">
-      <input type="radio" name="emoji" value="😱" class="sr-only">
-      <span class="emoji-icon">😱</span>
-    </label>
-</div>
+            <div class="emoji-comment">
+              <label class="emoji-button-laugh">
+                <input type="radio" name="emoji" value="😂" class="sr-only">
+                <span class="emoji-icon">😂</span>
+              </label>
+              <label class="emoji-button-cry">
+                <input type="radio" name="emoji" value="😭" class="sr-only">
+                <span class="emoji-icon">😭</span>
+              </label>
+              <label class="emoji-button-angry">
+                <input type="radio" name="emoji" value="😡" class="sr-only">
+                <span class="emoji-icon">😡</span>
+              </label>
+              <label class="emoji-button-surprised">
+                <input type="radio" name="emoji" value="😱" class="sr-only">
+                <span class="emoji-icon">😱</span>
+              </label>
+            </div>
   
-  <button type="submit" class="button-publications">
-    <span>Verzend</span>
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4">
-      <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13">
-    </svg>
-  </button>
-</form>
+            <button type="submit" class="button-publications">
+              <span>Verzend</span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4">
+                <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13">
+              </svg>
+            </button>
+
+
+          </form>
 </section>
 
+<div class="emoji-textbaloon">
+  <label class="emoji-button-laugh">
+    <input type="radio" name="emoji" value="😂" class="sr-only">
+    <span class="emoji-icon">😂</span>
+  </label>
+  <label class="emoji-button-cry">
+    <input type="radio" name="emoji" value="😭" class="sr-only">
+    <span class="emoji-icon">😭</span>
+  </label>
+  <label class="emoji-button-angry">
+    <input type="radio" name="emoji" value="😡" class="sr-only">
+    <span class="emoji-icon">😡</span>
+  </label>
+  <label class="emoji-button-surprised">
+    <input type="radio" name="emoji" value="😱" class="sr-only">
+    <span class="emoji-icon">😱</span>
+  </label>
+</div>
 
 {% render 'views/partials/foot.liquid', title: 'DDA Publicaties' %}
