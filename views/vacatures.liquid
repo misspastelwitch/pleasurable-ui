@@ -1,8 +1,9 @@
 {% render 'views/partials/head.liquid', title: 'Vacatures' %}
+{% render 'views/partials/header.liquid', title: 'Vacatures' %}
 
 <link rel="stylesheet" href="../style/style.css">
 
-<header>
+{% comment %} <header>
     <nav class="topnav">
       <img src="../assets/DDAlogo.png" alt="logo" class="logo" height="100px" width="140px" alt="logo-dda">
 
@@ -12,20 +13,19 @@
 
 
     </nav>
-  </header>
+  </header> {% endcomment %}
 
-  <header class="titles">
+  <section class="titles">
     <h1>VACATURES</h1>
     <p>Verslim je carrière bij de beste digitale bureaus van Nederland.<br>
      Pak je rol als developer of designer, researcher, als scrum master of marketeer,
      als strateeg.<br> Start of groei door – en laat zien wat je kan.</p>
-  </header>
+  </section>
 
 
 <form>
-    <input type="text" class="zoek" id="search" name="search" placeholder="Zoek een vacature..."
-    >
-    <div "buttons">
+    <input type="text" class="zoek" id="search" name="search" placeholder="Zoek een vacature...">
+    <div class="buttons">
     <select class="button">
         <option value="all">Expertise</option>
         <option value="frontend">Frontend Developer</option>

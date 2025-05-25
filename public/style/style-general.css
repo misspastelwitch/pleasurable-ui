@@ -1,93 +1,88 @@
+/* header */
 header {
-    display: inline-flex;
-    justify-content: center;
+  padding: var(--spacing-32);
+  height: var(--spacing-128);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  border-bottom: var(--border);
+  justify-content: space-between;
 }
+
+.logo-header {
+align-items: center;
+}
+
 .navigation {
-    background-color: var(--color-white);
-    padding: 1rem 2rem;
-    display: flex;
-    flex-direction: column; 
-    align-items: flex-end;  
-    border-bottom: 1px solid var(--color-black);
-  }
-  
-  .navigation a {
-    color: var(--color-black);
-    margin: 0 var(--spacing-16);
-    text-decoration: none;
-    font-family: monospace;
-  }
-  
-  .navigation a:after {
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: -4px;
-    background-color: var(--color-blue);
-    transform-origin: bottom right;
-    transition: var(--general-animation);
-  }
-  
-  .navigation a:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-    text-decoration: underline;
-  }
-  
-  .navigation a.active {
-    color: var(--color-blue);
-  }
-  
-  .navigation a.active:after {
-    transform: scaleX(1);
-  }
-  
-  .navigation {
-    background-color: var(--color-white);
-    color: var(--color-black);
-    padding: var(--spacing-48) var(--spacing-32);
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-32);
-  }
-  
+  background-color: var(--color-white);
+  padding: 1rem 2rem;
+}
+
+.navigation a {
+  color: var(--color-black);
+  margin: 0 var(--spacing-16);
+  text-decoration: none;
+  font-family: monospace;
+  position: relative;
+}
+
+.navigation a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-blue);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: var(--general-animation);
+}
+
+.navigation a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  text-decoration: underline;
+}
+
+.navigation a.active {
+  color: var(--color-blue);
+}
+
+.navigation a.active::after {
+  transform: scaleX(1);
+}
+
+main{
+  margin: var(--spacing-32);
+  border: var(--border);
+}
+  /* footer */
+
   footer {
     background-color: var(--color-black);
     color: var(--color-white);
-    padding: 3rem 2rem;
+    padding: var(--spacing-32);
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    text-decoration: none;
-  }
+    grid-template-columns: repeat(3, 1fr);
 
-  /* footer */
-  @media (min-width: 768px) {
-    .site-footer {
-      grid-template-columns: repeat(3, 1fr);
-    }
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
   }
-  
-  .footer-logo img {
+}
+
+  .footer-logo {
     max-width: var(--spacing-128);
     height: auto;
+    display: flex;
+    justify-content: center;
   }
   
   .footer-links ul {
-    list-style: none;
-    display: grid;
     font-family: monospace;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-16);
-  }
-  
-  @media (min-width: 640px) {
-    .footer-links ul {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
+    list-style: none;
+    line-height: var(--spacing-16);
+  } 
   
   .footer-links a {
     color: var(--color-white);
@@ -117,12 +112,8 @@ header {
     color: var(--color-blue);
   }
   
-  .footer-address strong {
-    font-weight: 700;
-  }
-
   .main-home {
-    background-color: black;
+    background-color: var(--color-black);
   }
 
   /* seraching tool */
@@ -144,3 +135,52 @@ header {
       height: var(--spacing-32);
     }
     
+
+    @view-transition {
+      navigation: auto;
+    }
+
+
+  /* foto-parade */
+
+  .foto-parade {
+    height: 8em;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    animation-play-state: running; 
+}
+
+.picture-container-1 {
+    display: flex;
+    animation: parade 20s linear infinite;
+}
+
+.containerA {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8em;
+    width: 8em;
+}
+
+.become-a-partner {
+  margin-left: var(--spacing-32);
+  margin-right: var(--spacing-32);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+
+  a {
+      background-color: var(--color-blue);
+      color: var(--color-white);
+      width: var(--spacing-32);
+      height: var(--spacing-32);
+      padding: var(--spacing-16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-content: center;
+  }
+}

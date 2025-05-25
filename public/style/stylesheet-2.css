@@ -49,6 +49,10 @@
     /* shadow */
     --shadow: 0 4px 6px rgba(54, 75, 247, 0.2);
 
+
+    /* border */
+    --border: 1.5px solid black;
+
     /* animations */
     --general-animation: transform 0.3s ease-out;
   }
@@ -212,8 +216,4 @@ nav {
     .text-mobile-h1 {
       font-size: var(--mobile-h1);
     }
-  }
-
-  body {
-    margin: var(--spacing-32);
   }

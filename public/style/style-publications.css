@@ -161,6 +161,7 @@
   }
   
   .laatste-nieuws-publications p {
+    margin-left: var(--spacing-32);
     font-size: 1em;
     font-family: 'Archivo', sans-serif;
     color: var(--black);

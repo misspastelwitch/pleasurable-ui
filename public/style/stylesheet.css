@@ -37,18 +37,7 @@ body
   src: url(/fonts/Archivo-SemiBold.woff2) format("woff2"),url(/fonts/Archivo-SemiBold.woff) format("woff")
 }
 
-@font-face {
-  font-family: MartianMono;
-  font-display: swap;
-  src: url(/fonts/MartianMono-Regular.woff2) format("woff2"),url(/fonts/MartianMono-Regular.woff) format("woff")
-}
 
-@font-face {
-  font-family: MartianMono;
-  font-weight: 300;
-  font-display: swap;
-  src: url(/fonts/MartianMono-Light.woff2) format("woff2"),url(/fonts/MartianMono-Light.woff) format("woff")
-}
 
 /* Font heights */
 --letter-spacing: -0.04em;
