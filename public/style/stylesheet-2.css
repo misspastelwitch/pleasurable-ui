@@ -24,6 +24,7 @@
     --mobile-subtext: 14px;
     
     /* spacing */
+    --spacing-4: 4px;
     --spacing-8: 8px;
     --spacing-12: 12px;
     --spacing-16: 16px;
@@ -62,11 +63,14 @@
     font-family: "Archivo-semi-bold", sans-serif;
     font-size: var(--desktop-h1);
     text-transform: uppercase;
+    margin-left: var(--spacing-16);
 
     @media (max-width:1200px) {
+      margin-left: var(--spacing-8);
         font-size: var(--tablet-h1);
     }
     @media (max-width:530px) {
+      margin-left: var(--spacing-4);
         font-size: var(--mobile-h1);
     }
 }
@@ -75,18 +79,23 @@ h2 {
     font-family: "Archivo-semi-bold", sans-serif;
     font-size: var(--desktop-h2);
     text-transform: uppercase;
+    margin-left: var(--spacing-16);
 
     @media (max-width:1200px) {
         font-size: var(--tablet-h2);
+        margin-left: var(--spacing-8);
     }
     @media (max-width:530px) {
         font-size: var(--mobile-h2);
+        margin-left: var(--spacing-4);
     }
 }
 
 h3 {
     font-family: "Archivo", sans-serif;
     font-size: var(--desktop-h3);
+    text-transform: uppercase;
+    margin-left: var(--spacing-16);
 
     @media (max-width:1200px) {
         font-size: var(--tablet-h3);
@@ -99,11 +108,14 @@ h3 {
 h4 {
     font-family: "Archivo", sans-serif;
     font-size: var(--desktop-h4);
+    margin-left: var(--spacing-16);
 
     @media (max-width:1200px) {
+      margin-left: var(--spacing-8);
         font-size: var(--tablet-h4);
     }
     @media (max-width:530px) {
+      margin-left: var(--spacing-4);
         font-size: var(--mobile-h4);
     }
 }

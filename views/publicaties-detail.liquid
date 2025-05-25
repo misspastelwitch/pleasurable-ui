@@ -7,12 +7,11 @@
 <link href="../style/stylesheet-2.css" rel="stylesheet">
   
 <section class="title-publication-detail">
-  <div class="publication-detail-wrapper">
-    <a href="/publicaties" class="publication-detail-back-link">
+    <a href="/publicaties" class="go-back-button">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4">
-        <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      Terug naar publicaties
+      Ga terug  
     </a>
 </section>
 
@@ -20,17 +19,17 @@
 </section class="content-publication-detail">
     <article class="publication-detail-article">
 
-      {% if publication.photo %}
+      {% if publications.photo %}
         <div class="publication-detail-image">
           <img 
-            src="https://fdnd-agency.directus.app/assets/{{ publication.photo }}" 
-            alt="{{ publication.title }}"
+            src="https://fdnd-agency.directus.app/assets/{{ publications.photo }}" 
+            alt="{{ publications.title }}"
           />
         </div>
       {% endif %}
 
     <div class="content-publication-detail">
-          {{ publication.content }}
+          {{ publications.content }}
     </div>
 
 </section>
@@ -38,7 +37,7 @@
           <h3 class="publication-detail-comments-title">Laat een reactie achter</h3>
           
           <form action="/comments" method="post" class="publication-detail-comment-form">
-            <input type="hidden" name="publication_id" value="{{ publication.id }}">
+            <input type="hidden" name="publication_id" value="{{ publications.id }}">
             
             <div class="comment-form-field">
               <textarea name="comment" placeholder="Schrijf hier wat je vindt..." class="publication-detail-textarea"required></textarea>
