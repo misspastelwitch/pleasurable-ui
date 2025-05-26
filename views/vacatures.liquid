@@ -2,6 +2,7 @@
 {% render 'views/partials/header.liquid', title: 'Vacatures' %}
 
 <link rel="stylesheet" href="../style/style.css">
+<link rel="stylesheet" href="../style/style-vacatures.css">
 
 {% comment %} <header>
     <nav class="topnav">
@@ -15,80 +16,90 @@
     </nav>
   </header> {% endcomment %}
 
+{% comment %} 
   <section class="titles">
     <h1>VACATURES</h1>
     <p>Verslim je carrière bij de beste digitale bureaus van Nederland.<br>
      Pak je rol als developer of designer, researcher, als scrum master of marketeer,
      als strateeg.<br> Start of groei door – en laat zien wat je kan.</p>
+  </section> {% endcomment %}
+
+
+<main class="main-vacatures">
+
+  <section class="page-title-vacatures">
+    <a href="">← TERUG NAAR HOME</a>
+
+    <h1>VACATURES</h1>
+    <p>Verslim je carrière bij de beste digitale bureaus van Nederland. Pak je rol als developer of designer, researcher, als scrum master of marketeer, als strateeg. Start of groei door – en laat zien wat je kan.</p>
   </section>
 
+  <form>
+      <input type="text" class="zoek" id="search" name="search" placeholder="Zoek een vacature...">
+      <div class="buttons">
+      <select class="button">
+          <option value="all">Expertise</option>
+          <option value="frontend">Frontend Developer</option>
+          <option value="backend">Backend Developer</option>
+          <option value="fullstack">Fullstack Developer</option>
+          <option value="designer">Designer</option>
+          <option value="marketeer">Marketeer</option>
+      </select>
+      <select class="button">
+          <option value="all">Uren</option>
+          <option value="vol">Voltijd 38-40 uur</option>
+          <option value="deel">Deeltijd 16-24 uur</option>
+          <option value="stage">Stage</option>
 
-<form>
-    <input type="text" class="zoek" id="search" name="search" placeholder="Zoek een vacature...">
-    <div class="buttons">
-    <select class="button">
-        <option value="all">Expertise</option>
-        <option value="frontend">Frontend Developer</option>
-        <option value="backend">Backend Developer</option>
-        <option value="fullstack">Fullstack Developer</option>
-        <option value="designer">Designer</option>
-        <option value="marketeer">Marketeer</option>
-    </select>
-    <select class="button">
-        <option value="all">Uren</option>
-        <option value="vol">Voltijd 38-40 uur</option>
-        <option value="deel">Deeltijd 16-24 uur</option>
-        <option value="stage">Stage</option>
+      </select>
+      <select class="button">
+          <option value="all">Locatie</option>
+          <option value="ams">Amsterdam</option>
+          <option value="dh">Den Haag</option>
+          <option value="ut">Utrecht</option>
+          <option value="bre">Breda</option>
+          <option value="hfd">Hooftdorp</option>
+      </select>
+      <select class="button">
+          <option value="all">Taal</option>
+          <option value="En">Engels</option>
+          <option value="Nl">Nederlands</option>
+      </select>
+      <button type="submit">Filter</button>
+      </div>
+  </form>
 
-    </select>
-    <select class="button">
-        <option value="all">Locatie</option>
-        <option value="ams">Amsterdam</option>
-        <option value="dh">Den Haag</option>
-        <option value="ut">Utrecht</option>
-        <option value="bre">Breda</option>
-        <option value="hfd">Hooftdorp</option>
-    </select>
-    <select class="button">
-        <option value="all">Taal</option>
-        <option value="En">Engels</option>
-        <option value="Nl">Nederlands</option>
-    </select>
-    <button type="submit">Filter</button>
-    </div>
-</form>
+  <section class="add-vacature-vacatures">
+    <button popovertarget="mypopover" class="add-button-vacatures">
+        <p>+</p>
+        <p>VOEG VACATURE TOE</p>
+    </button>
 
-<section class="add-vacature">
-  <button popovertarget="mypopover" class="add-button">
-      <p>+</p>
-      <p>VOEG VACATURE TOE</p>
-  </button>
+    <dialog popover id="mypopover-vacatures">
+        <button popovertarget="mypopover" popovertargetaction="hide" class="popup-button">x</button>
 
-  <dialog popover id="mypopover">
-      <button popovertarget="mypopover" popovertargetaction="hide" class="popup-button">x</button>
+        <form method="post"> 
+            <label>
+                Titel:
+                <input type="text" name="title">
+            </label>
 
-      <form method="post"> 
-          <label>
-              Titel:
-              <input type="text" name="title">
-          </label>
+            <label>
+                Locatie:
+                <input type="text" name="locatie">
+            </label>
 
-          <label>
-              Locatie:
-              <input type="text" name="locatie">
-          </label>
+            <label>
+                Uren:
+                <input type="text" name="hours">
+            </label>
 
-          <label>
-              Uren:
-              <input type="text" name="hours">
-          </label>
+            <button type="submit">Verstuur!</button>
+        </form>
+    </dialog>
+  </section>
 
-          <button type="submit">Verstuur!</button>
-      </form>
-  </dialog>
-</section>
-
-<main class="gridview">
+{% comment %} <main class="gridview"> {% endcomment %}
     {% comment %} <ul>
         {% if vacatures %}
 

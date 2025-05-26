@@ -49,10 +49,10 @@ app.get('/over-ons', async function (request, response) {
 // geen extra details paginas voor over-ons
 
 app.get('/events', async function (request, response) {
-  response.render('events.liquid', {
-   events: eventsJSON.data
-  });
+  const eventResponse = await fetch('https://fdnd-agency.directus.app/items/dda_events')
+  const eventResponseJSON = await eventResponse.json();
 
+  response.render('events.liquid', {  events: eventResponseJSON.data })
 })
 
 // extra detailpagina's voor evenementen (JSON file)
