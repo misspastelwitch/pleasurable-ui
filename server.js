@@ -5,6 +5,12 @@ import express from 'express'
 // Importeer de Liquid package (ook als dependency via npm geïnstalleerd)
 import { Liquid } from 'liquidjs';
 
+import { gsap } from "gsap";
+
+
+
+
+
 // Maak een nieuwe Express applicatie aan, waarin we de server configureren
 const app = express()
 
