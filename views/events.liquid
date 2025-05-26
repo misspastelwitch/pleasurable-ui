@@ -27,7 +27,17 @@
 
 <main class="gridview">
 
-{% render 'partials/carousel-overons.liquid' %}
+{% comment %} {% render 'partials/carousel-overons.liquid' %} {% endcomment %}
+
+{% for event in events %}
+
+  <section>
+    <h2>{{ event.title }}</h2>
+    <img src="https://fdnd-agency.directus.app/assets/{{ event.photo }}">
+    {% comment %} <a href="/event/{{ event.id }}">BEKIJKEN ↗</a> {% endcomment %}
+  </section>
+    
+{% endfor %}   
 
 </main> 
 

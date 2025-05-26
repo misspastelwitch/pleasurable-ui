@@ -2,6 +2,7 @@
 {% render 'views/partials/header.liquid', title: 'Over ons' %}
 
 <link rel="stylesheet" href="../style/style-over-ons.css">
+{% comment %} <main> {% endcomment %}
         <div class="main-container">
             <a href="#content" datocms-no-index data-astro-cid-vngqoflz="true" class="a11y-kb-only link">Direct naar inhoud </a>
             <style>
@@ -9,60 +10,11 @@
                     display: contents
                 }
             </style>
-            <astro-island uid="Z12K522" component-url="/_astro/Header.GeBz0w_-.js" component-export="Header" renderer-url="/_astro/client.CmA5iGOb.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;Header&quot;,&quot;value&quot;:true}" await-children>
-                <header class="header">
-                    <a rel="home" href="/" aria-label="Ga naar Dutch Digital Agencies home page" class="link">
-                        <img alt height="164" src="/_astro/logo.CO-nlMzN.svg" width="217" class="header__logo"/>
-                    </a>
-                    <div class="menu">
-                        <button type="button" aria-controls="menu" aria-expanded="false" aria-haspopup="menu" aria-label="Open menu" class="menu__burger-button button button--icon-only button--target-area-self">
-                            <svg role="presentation" data-icon="burger" class="icon button__icon">
-                                <use href="#burger" xlink:href="#burger"></use>
-                            </svg>
-                        </button>
-                        <div class="menu__overlay">
-                            <div class="menu__content">
-                                <div class="menu__header">
-                                    <button type="button" aria-label="Close menu" class="menu__close-button button button--icon-only button--target-area-self">
-                                        <svg role="presentation" data-icon="close" class="icon button__icon">
-                                            <use href="#close" xlink:href="#close"></use>
-                                        </svg>
-                                    </button>
-                                </div>
-
-{% include 'views/partials/nav.liquid', title: 'navigatie' %}
-                                <div class="menu__footer">
-                                    <a href="/inloggen/" target="_blank" class="button button--target-area-self button--secondary">
-                                        <span class="button__content">Inloggen</span>
-                                        <svg role="presentation" data-icon="arrow-right" class="icon button__icon">
-                                            <use href="#arrow-right" xlink:href="#arrow-right"></use>
-                                        </svg>
-                                    </a>
-                                    <a href="https://aanmelden-dutchdigitalagencies.com/lid-worden" target="_blank" class="button button--target-area-self">
-                                        <span class="button__content">Word lid</span>
-                                        <svg role="presentation" data-icon="arrow-right" class="icon button__icon">
-                                            <use href="#arrow-right" xlink:href="#arrow-right"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </header>
-                <!--astro:end-->
-            </astro-island>
             <main id="content" tabindex="-1">
                 <div class="page-header" data-astro-cid-25kvgvdq>
                     <div class="page-title grid">
                         <div class="container-padding-x column column--span-mobile-12 column--span-tablet-12 column--span-desktop-12 column--start-mobile-1 column--start-tablet-1 column--start-desktop-1">
-                            <div class="header-slot" data-astro-cid-25kvgvdq>
-                                <a href="../" data-astro-cid-jkqsjcuo="true" class="back-button button button--target-area-self button--icon-left button--tertiary">
-                                    <span class="button__content">Terug naar home</span>
-                                    <svg role="presentation" data-icon="arrow-left" class="icon button__icon">
-                                        <use href="#arrow-left" xlink:href="#arrow-left"></use>
-                                    </svg>
-                                </a>
-                            </div>
+                            
                             <h1 data-astro-cid-25kvgvdq="true" class="heading heading--1">Over ons</h1>
                         </div>
                         <div class="page-title-content container-padding-x column column--span-mobile-12 column--span-tablet-12 column--span-desktop-8 column--start-mobile-1 column--start-tablet-1 column--start-desktop-3">
@@ -131,9 +83,6 @@
                         
                     </div>
                 </div>
-
-                
-                {% render 'partials/carousel-overons.liquid' %}
 
 
                 <section data-astro-cid-jkqsjcuo="true" class="grid grid--border">
