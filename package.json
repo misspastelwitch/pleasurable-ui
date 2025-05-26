@@ -27,6 +27,7 @@
   "homepage": "https://github.com/fdnd-task/pleasurable-ui#readme",
   "dependencies": {
     "express": "^5.0.1",
+    "gsap": "^3.13.0",
     "liquidjs": "^10.21.0"
   }
 }
