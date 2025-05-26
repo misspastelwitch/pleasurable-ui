@@ -1,10 +1,13 @@
 {% for vacature in vacatures %}
 
-    <section class="vacature-vacatures">
+  <section class="vacature-vacatures">
       <h2>{{ vacature.title }}</h2>
       <p>{{ vacature.locatie }}</p>
       <p>{{ vacature.hours }} uur</p> 
-       <section class="add-vacature-vacatures">
+      <a href="/vacature/{{ vacature.id }}">BEKIJKEN ↗</a>
+  </section>
+
+{% endfor %}
     <button popovertarget="solicitatie-popover-vacatures" class="add-button-vacatures">
         <p></p>
         <p>Soliciteer nu</p>
