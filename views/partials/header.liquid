@@ -4,7 +4,10 @@
             <source type="image/avif" srcset="../assets/DDA-logo-black.png"> 
             <source type="image/webp" srcset="../assets/DDA-logo-black.png"> 
 
-            <img src="../assets/DDA-logo-white" width="100p" height="75p" alt="logo-DDA">
+            <img src="../assets/DDA-logo-white" width="100p" height="75p" alt="logo-DDA" class="hidden">
+            <img src="../assets/DDA-logo-black" width="100p" height="75p" alt="logo-DDA" class="logo-darkmode">
+
+
         </picture>
     </div>
 
@@ -17,7 +20,12 @@
     </div>
 
     <div class="dark-light-mode-button">
-        <button class="darkmode">🌙</button>
+        <button class="darkmode-button">
+          <img src="../assets/moon.png" style="width: 20px; height: 20px;">
+        </button>
+        <button class="lightmode-button">
+            <img src="../assets/sun.png" style="width: 20px; height: 20px;">
+            </button>
     </div>
 </header>
-<main>
+{% comment %} <main> {% endcomment %}

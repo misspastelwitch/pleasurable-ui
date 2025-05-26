@@ -7,75 +7,106 @@
 <link href="../style/stylesheet-2.css" rel="stylesheet">
   
 <section class="title-publication-detail">
-  <div class="publication-detail-wrapper">
-    <a href="/publicaties" class="publication-detail-back-link">
+    <a href="/publicaties" class="go-back-button">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4">
-        <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      Terug naar publicaties
+      Ga terug  
     </a>
 </section>
 
 <section>
-</section class="content-publication-detail">
-    <article class="publication-detail-article">
-
-      {% if publication.photo %}
-        <div class="publication-detail-image">
-          <img 
-            src="https://fdnd-agency.directus.app/assets/{{ publication.photo }}" 
-            alt="{{ publication.title }}"
-          />
-        </div>
-      {% endif %}
-
-    <div class="content-publication-detail">
-          {{ publication.content }}
-    </div>
-
+  <section id="titel-pagina" style="view-transition-name: post-{{ publication.id }}">
+    <h1> {{ publication.title }} </h1>
+    <p>  {{ publication.intro }} </p>
 </section>
-<section class="commentsection-publications-detail">
-          <h3 class="publication-detail-comments-title">Laat een reactie achter</h3>
+
+<section id="content-publication-detail">
+    {{ publication.content }}
+</section>
+
+
+<section class="comment-section-publication-detail">
+    {% assign messageszero = messages %}
+    {% if messageszero.size < 1 %}
+        {% render 'views/partials/empty-state.liquid' %}
+        {% comment %} hier wordt de empty state weergegeven als er geen comments zijn {% endcomment %}
+    {% else %}
+    {% for message in messageszero %}
+        <div class="comment-1">
+            <div class="name-comment-1">
+                <h4>{{ message.from | replace: "Miel_", "" }}</h4>
+            </div>
+            <div class="emoji-comment-1">
+                {% if message.emoji == 'laugh' %}😂{% endif %}
+                {% if message.emoji == 'angry' %}😡{% endif %}
+                {% if message.emoji == 'cry' %}😭{% endif %}
+                {% if message.emoji == 'surprised' %}😱{% endif %}
+            </div>
+            <div class="comment-comment-1">
+                <p>{{ message.text }}</p>
+            </div>
+        </div>
+    {% endfor %}
+    {% endif %}
+</section>
+
+<section class="comment-form-publications-detail">
           
-          <form action="/comments" method="post" class="publication-detail-comment-form">
+          <form action="/publicatie/{{ publication.id }}" method="post">
             <input type="hidden" name="publication_id" value="{{ publication.id }}">
             
-            <div class="comment-form-field">
+            <div class="text-comment">
               <textarea name="comment" placeholder="Schrijf hier wat je vindt..." class="publication-detail-textarea"required></textarea>
             </div>
             
-            <div class="comment-form-actions">
-              <div class="comment-form-name">
+            <div class="name-comment">
                 <input type="text" name="name" placeholder="naam..." class="publication-detail-input" required>
             </div>
 
-<div class="comment-form-emojis">
-    <label class="emoji-button-laugh">
-      <input type="radio" name="emoji" value="😂" class="sr-only">
-      <span class="emoji-icon">😂</span>
-    </label>
-    <label class="emoji-button-cry">
-      <input type="radio" name="emoji" value="😭" class="sr-only">
-      <span class="emoji-icon">😭</span>
-    </label>
-    <label class="emoji-button-angry">
-      <input type="radio" name="emoji" value="😡" class="sr-only">
-      <span class="emoji-icon">😡</span>
-    </label>
-    <label class="emoji-button-surprised">
-      <input type="radio" name="emoji" value="😱" class="sr-only">
-      <span class="emoji-icon">😱</span>
-    </label>
-</div>
+            <div class="emoji-comment">
+        
+            </div>
   
-  <button type="submit" class="button-publications">
-    <span>Verzend</span>
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4">
-      <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13">
-    </svg>
-  </button>
-</form>
+            <button type="submit" class="button-publications">
+              <span>Verzend</span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4">
+                <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13">
+              </svg>
+            </button>
+
+
+          </form>
 </section>
 
+<div class="emoji-textbaloon">
+    <form>
+          
+            <label for="laugh"> 
+              <input type="radio" class="laugh" value="1" name="star-radio">
+              <span class="emoji-icon">😂</span>\
+              <div class="check"></div>
+            </label>
+         
+            <label for="cry"> 
+              <input type="radio" class="cry" value="2" name="star-radio">
+              <span class="emoji-icon">😭</span>
+              <div class="check"></div>
+            </label>
 
-{% render 'views/partials/footer.liquid', title: 'DDA Publicaties' %}
+            <label for="angry"> 
+              <input type="radio" class="angry" value="3" name="star-radio">
+              <span class="emoji-icon">😡</span>
+              <div class="check"></div>
+            </label>
+
+            <label for="surprised"> 
+              <input type="radio" class="surprised" value="4" name="star-radio">
+              <span class="emoji-icon">😱</span>
+              <div class="check"></div>
+            </label>
+  </form>
+</div>
+
+
+{% render 'views/partials/foot.liquid', title: 'DDA Publicaties' %}

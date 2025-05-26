@@ -1,31 +1,22 @@
 /* General Layout */
 .title-publications {
     max-width: 100%;
-    padding: 2em;
+    margin: var(--spacing-32);
   }
   
   .title-publications a.back-link {
     display: inline-flex;
     align-items: center;
     color: #005BBB; /* Tailwind's 'text-color-blue' */
-    margin-bottom: 1.5rem;
     font-family: 'Martian Mono', monospace;
     text-decoration: none;
   }
   
   .title-publications a.back-link svg {
-    margin-right: 0.5em;
     height: 1em;
     width: 1em;
   }
   
-  .title-publications h1 {
-    font-size: 3em; 
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-bottom: 1.5em;
-    font-family: 'Archivo SemiExpanded', sans-serif;
-  }
   
   @media (min-width: 768px) {
     .title-publications h1 {
@@ -39,17 +30,15 @@
   }
   
   .overview-publications {
-    max-width: 80rem;
+    max-width: 80em;
     margin: 0 auto;
     padding: 3rem 1rem;
   }
-  
-  .searching-tool-publications {
-    margin-bottom: 2rem;
-  }
+
   
   .publication-grid {
     display: grid;
+    margin: var(--spacing-16);
     grid-template-columns: 1fr;
     gap: 2rem;
   }
@@ -160,16 +149,22 @@
     }
   }
   
-  .laatste-nieuws-publications p {
-    margin-left: var(--spacing-32);
-    font-size: 1em;
-    font-family: 'Archivo', sans-serif;
-    color: var(--black);
+  .buttonstopic-publication {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-32);
+    padding: var(--spacing-16);
   }
 
-  .go-back-button {
+  .buttonstopic-publication button {
     background-color: var(--color-blue);
     color: var(--color-white);
-    padding: 1em;
+    padding: var(--spacing-16);
+    flex-direction: column;
+    justify-content: space-between;
   }
-  
+
+  .buttonstopic-publication button:hover {
+    background-color: var(--color-dark-blue);
+
+  }
