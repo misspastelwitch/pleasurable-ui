@@ -52,6 +52,9 @@ footer.darkmode {
 .navigation {
   background-color: var(--color-white);
   padding: 1rem 2rem;
+  @media(max-width:770px){
+    display: none;
+  }
 }
 
 .navigation a {
@@ -99,10 +102,12 @@ main{
     background-color: var(--color-black);
     color: var(--color-white);
     padding: var(--spacing-32);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
+    /* grid-template-columns: repeat(3, 1fr); */
 
     @media (min-width: 640px) {
+      display: grid;
       grid-template-columns: repeat(2, 1fr);
   }
 }
