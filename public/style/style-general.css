@@ -13,8 +13,40 @@ header {
   justify-content: space-between;
 }
 
+.hidden {
+  display: none;
+}
+
+.hidden.darkmode {
+  display: block;
+}
+
+.logo-darkmode.darkmode {
+  display: none;
+}
+
 .logo-header {
 align-items: center;
+}
+
+.lightmode {
+  display: none;
+
+  &.darkmode {
+    display: block;
+  }
+}
+
+.darkmod-button.darkmode {
+  display: none;
+}
+
+body.darkmode {
+  color-scheme: dark;
+}
+
+footer.darkmode {
+  color-scheme: dark;
 }
 
 .navigation {
@@ -74,6 +106,7 @@ main{
       grid-template-columns: repeat(2, 1fr);
   }
 }
+
 
   .footer-logo {
     max-width: var(--spacing-128);
@@ -231,3 +264,4 @@ main{
   border-top: var(--border);
   border-bottom: var(--border);
 }
+

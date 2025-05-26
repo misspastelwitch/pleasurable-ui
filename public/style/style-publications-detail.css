@@ -78,16 +78,121 @@
     width: 100%;
     height: 100%;
     border: var(--border);
+
   }
 
 
   /* textballoon */
   .emoji-textbaloon {
+    display: flex;
+    flex-direction: row;
     height: var(--spacing-32);
     width: var(--spaing-48);
     border: var(--border);
     background-color: var(--color-white);
+    text-decoration: none;
+
+    & input[type="radio"] {
+      width: 3em;
+      height: 3em;
+      accent-color: var(--light-blue);
+      border: none;
+
+      &:checked {
+        filter:grayscale(0);
+      }
+
+    &form label {
+      position: relative;
+    }
   }
+
+  label:nth-of-type(2) input {
+    position: relative;
+    right: 48px;
+  }
+
+  label:nth-of-type(3) input {
+    position: relative;
+    right: 90px;
+  }
+
+  label:nth-of-type(4) input {
+    position: relative;
+    right: 132px;
+  }
+
+  label:nth-of-type(2) span {
+    position: relative;
+    right: 90px;
+    z-index: 2;
+  }
+
+  label:nth-of-type(3) span {
+    position: relative;
+    right: 130px;
+    z-index: 2;
+  }
+
+  label:nth-of-type(4) span {
+    position: relative;
+    right: 170px;
+    z-index: 2;
+  }
+}
+
+.comment-1 {
+  border-top: var(--border);
+  border-bottom: var(--border);
+}
+
+.name-comment-1 {
+  margin-left: var(--spacing-48);
+}
+
+.comment-comment-1 {
+  margin-left: var(--spacing-48);
+  margin-bottom: var(--spacing-48);
+}
+
+
+/* emoji function */
+  
+  .emoji-icon {
+    filter:grayscale(100);
+    font-size: 1.75em;
+    position: relative;
+    right: 41px;
+    top: -8px;
+    pointer-events: none;
+  }
+
+
+
+  input[class="cry"]:checked ~ .emoji-icon {
+    filter:grayscale(0);
+  }
+
+  input[class="angry"]:checked ~ .emoji-icon {
+    filter:grayscale(0);
+  }
+
+  input[class="surprised"]:checked ~ .emoji-icon {
+    filter:grayscale(0);
+  }
+
+  .check {
+    height: 3em;
+    width: 3em;
+    background-color: var(--color-light-blue);
+    border-radius: 1em;
+    position: relative;
+    display: none;
+  }
+
+
+
+
 
 
 

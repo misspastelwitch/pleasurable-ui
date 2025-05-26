@@ -30,19 +30,20 @@
     {% assign messageszero = messages %}
     {% if messageszero.size < 1 %}
         {% render 'views/partials/empty-state.liquid' %}
+        {% comment %} hier wordt de empty state weergegeven als er geen comments zijn {% endcomment %}
     {% else %}
     {% for message in messageszero %}
         <div class="comment-1">
-            <div class="name">
+            <div class="name-comment-1">
                 <h4>{{ message.from | replace: "Miel_", "" }}</h4>
             </div>
-            <div class="emoji">
-                {% if message.emoji == 'smile' %}😊{% endif %}
-                {% if message.emoji == 'surprise' %}😲{% endif %}
-                {% if message.emoji == 'tired' %}😩{% endif %}
-                {% if message.emoji == 'cry' %}😢{% endif %}
+            <div class="emoji-comment-1">
+                {% if message.emoji == 'laugh' %}😂{% endif %}
+                {% if message.emoji == 'angry' %}😡{% endif %}
+                {% if message.emoji == 'cry' %}😭{% endif %}
+                {% if message.emoji == 'surprised' %}😱{% endif %}
             </div>
-            <div class="comment">
+            <div class="comment-comment-1">
                 <p>{{ message.text }}</p>
             </div>
         </div>
@@ -64,22 +65,7 @@
             </div>
 
             <div class="emoji-comment">
-              <label class="emoji-button-laugh">
-                <input type="radio" name="emoji" value="😂" class="sr-only">
-                <span class="emoji-icon">😂</span>
-              </label>
-              <label class="emoji-button-cry">
-                <input type="radio" name="emoji" value="😭" class="sr-only">
-                <span class="emoji-icon">😭</span>
-              </label>
-              <label class="emoji-button-angry">
-                <input type="radio" name="emoji" value="😡" class="sr-only">
-                <span class="emoji-icon">😡</span>
-              </label>
-              <label class="emoji-button-surprised">
-                <input type="radio" name="emoji" value="😱" class="sr-only">
-                <span class="emoji-icon">😱</span>
-              </label>
+        
             </div>
   
             <button type="submit" class="button-publications">
@@ -94,22 +80,33 @@
 </section>
 
 <div class="emoji-textbaloon">
-  <label class="emoji-button-laugh">
-    <input type="radio" name="emoji" value="😂" class="sr-only">
-    <span class="emoji-icon">😂</span>
-  </label>
-  <label class="emoji-button-cry">
-    <input type="radio" name="emoji" value="😭" class="sr-only">
-    <span class="emoji-icon">😭</span>
-  </label>
-  <label class="emoji-button-angry">
-    <input type="radio" name="emoji" value="😡" class="sr-only">
-    <span class="emoji-icon">😡</span>
-  </label>
-  <label class="emoji-button-surprised">
-    <input type="radio" name="emoji" value="😱" class="sr-only">
-    <span class="emoji-icon">😱</span>
-  </label>
+    <form>
+          
+            <label for="laugh"> 
+              <input type="radio" class="laugh" value="1" name="star-radio">
+              <span class="emoji-icon">😂</span>\
+              <div class="check"></div>
+            </label>
+         
+            <label for="cry"> 
+              <input type="radio" class="cry" value="2" name="star-radio">
+              <span class="emoji-icon">😭</span>
+              <div class="check"></div>
+            </label>
+
+            <label for="angry"> 
+              <input type="radio" class="angry" value="3" name="star-radio">
+              <span class="emoji-icon">😡</span>
+              <div class="check"></div>
+            </label>
+
+            <label for="surprised"> 
+              <input type="radio" class="surprised" value="4" name="star-radio">
+              <span class="emoji-icon">😱</span>
+              <div class="check"></div>
+            </label>
+  </form>
 </div>
+
 
 {% render 'views/partials/foot.liquid', title: 'DDA Publicaties' %}
