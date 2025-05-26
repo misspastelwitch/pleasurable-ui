@@ -4,6 +4,30 @@
       <h2>{{ vacature.title }}</h2>
       <p>{{ vacature.locatie }}</p>
       <p>{{ vacature.hours }} uur</p> 
+       <section class="add-vacature-vacatures">
+    <button popovertarget="solicitatie-popover-vacatures" class="add-button-vacatures">
+        <p></p>
+        <p>Soliciteer nu</p>
+    </button>
+
+    <dialog popover id="solicitatie-popover-vacatures">
+        <button popovertarget="solicitatie-popover-vacatures" popovertargetaction="hide" class="popup-button">x</button>
+
+        <form method="post"> 
+            <label>
+                Naam:
+                <input type="text" name="Naam">
+            </label>
+
+            <label>
+                Email:
+                <input type="text" name="email">
+            </label>
+
+            <button type="submit">Verstuur!</button>
+        </form>
+    </dialog>
+  </section>
       <a href="/vacature/{{ vacature.id }}">BEKIJKEN ↗</a>
     </section>
       
