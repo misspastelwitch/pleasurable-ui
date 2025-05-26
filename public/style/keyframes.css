@@ -28,3 +28,21 @@
         width: 100%;
     }
 }
+
+@keyframes roundani {
+    0% {
+        background-color: var(--color-light-blue);
+        transform:translateY(0);
+    }
+
+    50% {
+        background-color: var(--color-dark-blue);
+        transform:translateY(-10px);
+    }
+
+    100% {
+        background-color: var(--color-blue);
+        transform:translateY(0px);
+
+    }
+}

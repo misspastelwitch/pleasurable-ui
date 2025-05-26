@@ -43,7 +43,7 @@
                 {% if message.emoji == 'cry' %}😭{% endif %}
                 {% if message.emoji == 'surprised' %}😱{% endif %}
             </div>
-            <div class="comment-comment-1">
+            <div class="comment">
                 <p>{{ message.text }}</p>
             </div>
         </div>
@@ -64,8 +64,45 @@
                 <input type="text" name="name" placeholder="naam..." class="publication-detail-input" required>
             </div>
 
+            <div class="emoji-showcase-comment">
+
+            </div>
+
             <div class="emoji-comment">
-        
+                <label for="laugh"> 
+                  <input type="radio" class="laugh" value="1" name="star-radio">
+                  <span class="emoji-icon">😂</span>
+                  <div class="check"></div>
+                </label>
+             
+                <label for="cry"> 
+                  <input type="radio" class="cry" value="2" name="star-radio">
+                  <span class="emoji-icon">😭</span>
+                  <div class="check"></div>
+                </label>
+    
+                <label for="angry"> 
+                  <input type="radio" class="angry" value="3" name="star-radio">
+                  <span class="emoji-icon">😡</span>
+                  <div class="check"></div>
+                </label>
+    
+                <label for="surprised"> 
+                  <input type="radio" class="surprised" value="4" name="star-radio">
+                  <span class="emoji-icon">😱</span>
+                  <div class="check"></div>
+                </label>
+
+                <div class="background-text-balloon">
+                  <img src="../assets/text-balloon.svg" alt="text-balloon">
+                </div>
+
+                <div class="emoji-showcased">
+                  <span class="emoji-icon-showcased">😱</span>
+                  <span class="emoji-icon-showcased">😡</span>
+                  <span class="emoji-icon-showcased">😭</span>
+                  <span class="emoji-icon-showcased">😂</span>
+                </div>
             </div>
   
             <button type="submit" class="button-publications">
@@ -77,36 +114,11 @@
 
 
           </form>
+
+          <div class="loading-state">
+            {% render 'views/partials/loading.liquid' %}
+          </div>
 </section>
-
-<div class="emoji-textbaloon">
-    <form>
-          
-            <label for="laugh"> 
-              <input type="radio" class="laugh" value="1" name="star-radio">
-              <span class="emoji-icon">😂</span>\
-              <div class="check"></div>
-            </label>
-         
-            <label for="cry"> 
-              <input type="radio" class="cry" value="2" name="star-radio">
-              <span class="emoji-icon">😭</span>
-              <div class="check"></div>
-            </label>
-
-            <label for="angry"> 
-              <input type="radio" class="angry" value="3" name="star-radio">
-              <span class="emoji-icon">😡</span>
-              <div class="check"></div>
-            </label>
-
-            <label for="surprised"> 
-              <input type="radio" class="surprised" value="4" name="star-radio">
-              <span class="emoji-icon">😱</span>
-              <div class="check"></div>
-            </label>
-  </form>
-</div>
 
 
 {% render 'views/partials/foot.liquid', title: 'DDA Publicaties' %}

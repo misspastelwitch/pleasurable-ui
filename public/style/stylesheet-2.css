@@ -56,6 +56,7 @@
 
     /* animations */
     --general-animation: transform 0.3s ease-out;
+    --round-animation: roundani 2s infinite;
 
     --border-darkmode: light-dark(--var(border),--var(border-light))
   }

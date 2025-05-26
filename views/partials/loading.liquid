@@ -1,10 +1,7 @@
-{% for input in soliciteer %}
-    <p>{{ input }}</p>
-{% endfor %}
+<div class="loading-state-general">
+    <div class="round-1"> </div>
+    <div  class="round-2"> </div>
+    <div class="round-3"> </div>
+</div>
 
-{% if appliedFor == vacature.id %}
-    {% render './partials/gelukt.liquid' %}
-        {% else %}
-    {% render 'partials/error.liquid', vacature: vacature %}
-
-    {% endif %}
+<p class="loading-state-p"> Jouw comment wordt geplaatst </p>
