@@ -24,6 +24,7 @@
     --mobile-subtext: 14px;
     
     /* spacing */
+    --spacing-4: 4px;
     --spacing-8: 8px;
     --spacing-12: 12px;
     --spacing-16: 16px;
@@ -52,9 +53,12 @@
 
     /* border */
     --border: 1.5px solid black;
+    --border-light: 1.5px solid white;
 
     /* animations */
     --general-animation: transform 0.3s ease-out;
+
+    --border-darkmode: light-dark(--var(border),--var(border-light))
   }
 
   /* standard fontsizes */
@@ -62,11 +66,14 @@
     font-family: "Archivo-semi-bold", sans-serif;
     font-size: var(--desktop-h1);
     text-transform: uppercase;
+    margin-left: var(--spacing-16);
 
     @media (max-width:1200px) {
+      margin-left: var(--spacing-8);
         font-size: var(--tablet-h1);
     }
     @media (max-width:530px) {
+      margin-left: var(--spacing-4);
         font-size: var(--mobile-h1);
     }
 }
@@ -75,18 +82,23 @@ h2 {
     font-family: "Archivo-semi-bold", sans-serif;
     font-size: var(--desktop-h2);
     text-transform: uppercase;
+    margin-left: var(--spacing-16);
 
     @media (max-width:1200px) {
         font-size: var(--tablet-h2);
+        margin-left: var(--spacing-8);
     }
     @media (max-width:530px) {
         font-size: var(--mobile-h2);
+        margin-left: var(--spacing-4);
     }
 }
 
 h3 {
     font-family: "Archivo", sans-serif;
     font-size: var(--desktop-h3);
+    text-transform: uppercase;
+    margin-left: var(--spacing-16);
 
     @media (max-width:1200px) {
         font-size: var(--tablet-h3);
@@ -99,11 +111,14 @@ h3 {
 h4 {
     font-family: "Archivo", sans-serif;
     font-size: var(--desktop-h4);
+    margin-left: var(--spacing-16);
 
     @media (max-width:1200px) {
+      margin-left: var(--spacing-8);
         font-size: var(--tablet-h4);
     }
     @media (max-width:530px) {
+      margin-left: var(--spacing-4);
         font-size: var(--mobile-h4);
     }
 }
@@ -111,26 +126,44 @@ h4 {
 p {
     font-family: "Archivo-semi-bold", sans-serif;
     font-size: var(--desktop-p);
+    margin-left: var(--spacing-16);
+
 
     @media (max-width:1200px) {
         font-size: var(--tablet-p);
+        margin-left: var(--spacing-8);
+
     }
     @media (max-width:530px) {
         font-size: var(--mobile-p);
+        margin-left: var(--spacing-4);
+
     }
 }
 
-.subtext {
-    font-family: "Martian Mono", monospace;
-    font-size: var(--desktop-subtext);
-
-    @media (max-width:1200px) {
-        font-size: var(--tablet-subtext);
-    }
-    @media (max-width:530px) {
-        font-size: var(--mobile-subtext);
-    }
+/* darkmode-function */
+body {
+  color: light-dark(var(--color-black), var(--color-white));
+  background-color: light-dark(var(--color-white), var(--color-black));
 }
+
+.navigation {
+  background-color: light-dark(var(--color-white), var(--color-black));
+}
+
+.navigation a {
+  color: light-dark(var(--color-black), var(--color-white));
+}
+
+footer {
+  color: light-dark(var(--color-white), var(--color-white));
+  background-color: light-dark(var(--color-black), var(--color-dark-blue));
+}
+
+
+
+
+
 
 nav {
     font-family: var(--font-family-mono);
@@ -145,6 +178,8 @@ nav {
 }
 
   
+
+/* fonts */
   
   .font-archivo-semi {
     font-family: "Archivo", sans-serif;
@@ -200,20 +235,3 @@ nav {
     transform: scale(1.05);
   }
   
-  @media (min-width: 768px) {
-    .text-desktop-h1 {
-      font-size: var(--desktop-h1);
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .text-tablet-h1 {
-      font-size: var(--tablet-h1);
-    }
-  }
-  
-  @media (max-width: 640px) {
-    .text-mobile-h1 {
-      font-size: var(--mobile-h1);
-    }
-  }
