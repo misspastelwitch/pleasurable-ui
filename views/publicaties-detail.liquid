@@ -70,32 +70,36 @@
 
             <div class="emoji-comment">
                 <label for="laugh"> 
-                  <input type="radio" class="laugh" value="1" name="star-radio">
+                  <input type="radio" class="laugh" value="1" name="star-radio" onclick="playSelect()">
                   <span class="emoji-icon">😂</span>
                   <span class="emoji-icon-laugh">😂</span>
                   <div class="check"></div>
                 </label>
              
                 <label for="cry"> 
-                  <input type="radio" class="cry" value="2" name="star-radio">
+                  <input type="radio" class="cry" value="2" name="star-radio" onclick="playSelect()">
                   <span class="emoji-icon">😭</span>
                   <span class="emoji-icon-cry">😭</span>
                   <div class="check"></div>
                 </label>
     
                 <label for="angry"> 
-                  <input type="radio" class="angry" value="3" name="star-radio">
+                  <input type="radio" class="angry" value="3" name="star-radio" onclick="playSelect()">
                   <span class="emoji-icon">😡</span>
                   <span class="emoji-icon-angry">😡</span>
                   <div class="check"></div>
                 </label>
     
                 <label for="surprised"> 
-                  <input type="radio" class="surprised" value="4" name="star-radio">
+                  <input type="radio" class="surprised" value="4" name="star-radio" onclick="playSelect()">
                   <span class="emoji-icon">😱</span>
                   <span class="emoji-icon-surprised">😱</span>
                   <div class="check"></div>
                 </label>
+
+                <audio autoplay  id="select">
+                  <source src="../assets/select.mp3" type="audio/mp3" id="select">
+                </audio>
 
                 <div class="background-text-balloon">
                   <img src="../assets/text-balloon.svg" alt="text-balloon">

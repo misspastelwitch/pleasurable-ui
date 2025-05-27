@@ -284,6 +284,8 @@ main{
 
 
 .loading-state-general {
+  position: relative;
+  top: 60px;
   height: var(--spacing-256);
   width: 100%;
   background-color: white;
@@ -337,6 +339,16 @@ main{
   font-family: monospace;
   display: flex;
   justify-content: center;
+  position: relative;
+  left: 20px;
+  top: 60px;
+}
+
+.loading {
+  height: 10em;
+  border: var(--border);
+  margin-left: var(--spacing-16);
+  margin-right: var(--spacing-16);
 }
 
 /* view transition */

@@ -62,8 +62,6 @@ app.get('/publicaties', async function (request, response) {
   response.render('publicaties.liquid', {
     publication: publicationsJSON.data
   });
-
-
 })
 
 
