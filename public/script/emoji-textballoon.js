@@ -1,12 +1,1 @@
-document.querySelectorAll('.emoji-radio').forEach(radio => {
-    radio.addEventListener('change', function () {
-      const selectedEmoji = this.getAttribute('data-emoji');
-      document.getElementById('emoji-display').textContent = selectedEmoji;
-    });
-  });
-
-const clickArea = document.querySelector('.emoji-showcase-comment')
-
-clickArea.addEventListener('click', function() {
-    clickArea.classList.toggle('on')
-})
+// when clicking on the emoji it must show up a textballon where you can choose another emoji

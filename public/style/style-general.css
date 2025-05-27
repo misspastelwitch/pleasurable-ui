@@ -211,6 +211,7 @@ main{
     }
 
 
+
   /* foto-parade */
 
   .foto-parade {
@@ -286,6 +287,8 @@ main{
   height: var(--spacing-256);
   width: 100%;
   background-color: white;
+  display: flex;
+  justify-content: center;
 }
 
 .loading-state-general.darkmode {
@@ -332,5 +335,18 @@ main{
 
 .loading-state-p {
   font-family: monospace;
-  width: 500px;
+  display: flex;
+  justify-content: center;
 }
+
+/* view transition */
+
+/* input */
+::view-transition-old(VT1) {
+  animation: slide-left 0.3s ease forwards;
+}
+
+::view-transition-new(VT1) {
+  animation: scale-up 0.3s ease reverse;
+}
+

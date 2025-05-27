@@ -16,12 +16,12 @@
 </section>
 
 <section>
-  <section id="titel-pagina" style="view-transition-name: post-{{ publication.id }}">
+  <section class="titel-pagina" style="view-transition-name: VT1">
     <h1> {{ publication.title }} </h1>
     <p>  {{ publication.intro }} </p>
 </section>
 
-<section id="content-publication-detail">
+<section class="content-publication-detail">
     {{ publication.content }}
 </section>
 
@@ -72,36 +72,33 @@
                 <label for="laugh"> 
                   <input type="radio" class="laugh" value="1" name="star-radio">
                   <span class="emoji-icon">😂</span>
+                  <span class="emoji-icon-laugh">😂</span>
                   <div class="check"></div>
                 </label>
              
                 <label for="cry"> 
                   <input type="radio" class="cry" value="2" name="star-radio">
                   <span class="emoji-icon">😭</span>
+                  <span class="emoji-icon-cry">😭</span>
                   <div class="check"></div>
                 </label>
     
                 <label for="angry"> 
                   <input type="radio" class="angry" value="3" name="star-radio">
                   <span class="emoji-icon">😡</span>
+                  <span class="emoji-icon-angry">😡</span>
                   <div class="check"></div>
                 </label>
     
                 <label for="surprised"> 
                   <input type="radio" class="surprised" value="4" name="star-radio">
                   <span class="emoji-icon">😱</span>
+                  <span class="emoji-icon-surprised">😱</span>
                   <div class="check"></div>
                 </label>
 
                 <div class="background-text-balloon">
                   <img src="../assets/text-balloon.svg" alt="text-balloon">
-                </div>
-
-                <div class="emoji-showcased">
-                  <span class="emoji-icon-showcased">😱</span>
-                  <span class="emoji-icon-showcased">😡</span>
-                  <span class="emoji-icon-showcased">😭</span>
-                  <span class="emoji-icon-showcased">😂</span>
                 </div>
             </div>
   

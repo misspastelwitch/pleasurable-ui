@@ -7,6 +7,7 @@
 
   .title-publication-detail {
     margin: var(--spacing-32);
+    view-transition-name: VT1;
   }
   
   .publication-detail-back-link {
@@ -32,7 +33,7 @@
 
 .comment-form-publications-detail form {
   display: grid;
-  grid-template-columns: 60% 10% 30%;
+  grid-template-columns: 60% 3em 30%;
   grid-template-rows: var(--spacing-256) var(--spacing-48);
   gap: var(--spacing-16);
   margin: var(--spacing-32);
@@ -88,7 +89,7 @@
     width: 500px;
     text-decoration: none;
     z-index: 2;
-    display: none;
+
 
     & input[type="radio"] {
       box-sizing: border-box;
@@ -108,28 +109,6 @@
 
     & label {
       position: relative;
-    }
-  }
-
-  .emoji-icon-showcased {
-    font-size: 1.75em;
-    position: relative;
-    pointer-events: none;
-    top: -25px;
-
-    &:nth-of-type(2) {
-      display: none;
-      right: 34px;
-    }
-
-    &:nth-of-type(3) {
-      display: none;
-      right: 70px;
-    }
-
-    &:nth-of-type(4) {
-      display: none;
-      right: 100px;
     }
   }
 
@@ -189,6 +168,9 @@
   margin-bottom: var(--spacing-48);
 }
 
+.emoji-showcased {
+  display: none;
+}
 
 /* emoji function */
   
@@ -201,12 +183,43 @@
     pointer-events: none;
   }
 
+  .emoji-comment label span:nth-of-type(2) {
+    font-size: 1.75em;
+    position: absolute;
+    pointer-events: none;
+    top: 93.5px;
+    left: -22px;
+    display: none;
+  }
+
+
+  .emoji-icon-laugh {
+    font-size: 1.75em;
+    position: absolute;
+  }
+
+  .emoji-icon-cry {
+    font-size: 1.75em;
+    position: absolute;
+  }
+
+  .emoji-icon-angry {
+    font-size: 1.75em;
+    position: absolute;
+  }
+
+  .emoji-icon-surprised {
+    font-size: 1.75em;
+    position: absolute;
+  }
+
   input[class="laugh"]:checked ~ .emoji-icon {
     filter:grayscale(0);
   }
 
   input[class="cry"]:checked ~ .emoji-icon {
     filter:grayscale(0);
+    scale: 2;
   }
 
   input[class="angry"]:checked ~ .emoji-icon {
@@ -215,21 +228,22 @@
 
   input[class="surprised"]:checked ~ .emoji-icon {
     filter:grayscale(0);
+
   }
 
-  input[class="laugh"]:checked ~ .emoji-showcased:nth-child(4) {
+  input[class="laugh"]:checked ~ .emoji-icon-laugh {
     display: block;
   }
 
-  input[class="cry"]:checked ~ .emoji-showcased:nth-child(3) {
+  input[class="cry"]:checked ~ .emoji-icon-cry {
     display: block;
   }
 
-  input[class="angry"]:checked ~ .emoji-showcased:nth-child(2) {
+  input[class="angry"]:checked ~ .emoji-icon-angry  {
     display: block;
   }
 
-  input[class="surprised"]:checked ~ .emoji-showcased:nth-child(4) {
+  input[class="surprised"]:checked ~ .emoji-icon-surprised  {
     display: block;
   }
 
