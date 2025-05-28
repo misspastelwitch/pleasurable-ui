@@ -5,16 +5,13 @@
       <p>{{ vacature.locatie }}</p>
       <p>{{ vacature.hours }} uur</p> 
       <a href="/vacature/{{ vacature.id }}">BEKIJKEN ↗</a>
+  </section>
 
 {% endfor %}
+    <button popovertarget="solicitatie-popover-vacatures" class="add-button-vacatures">
+        <p>Soliciteer nu</p>
+    </button>
 
-<section>
-
-  </section>
-        <button popovertarget="solicitatie-popover-vacatures" class="add-button-vacatures">
-          <p>Soliciteer nu</p>
-        </button>
-    
     <dialog popover id="solicitatie-popover-vacatures">
         <button popovertarget="solicitatie-popover-vacatures" popovertargetaction="hide" class="popup-button">x</button>
 
@@ -32,5 +29,4 @@
             <button type="submit">Verstuur!</button>
         </form>
     </dialog>
-
-    {% endcomment %}
+  </section>
