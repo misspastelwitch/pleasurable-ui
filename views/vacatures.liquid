@@ -75,7 +75,7 @@
         <p>VOEG VACATURE TOE</p>
     </button>
 
-    <dialog popover id="mypopover-vacatures">
+    <dialog popover id="mypopover">
         <button popovertarget="mypopover" popovertargetaction="hide" class="popup-button">x</button>
 
         <form method="post"> 
@@ -101,6 +101,7 @@
 
 {% comment %} <main class="gridview"> {% endcomment %}
     {% comment %} <ul>
+
         {% if vacatures %}
 
         {% for vacature in vacatures %}
@@ -130,19 +131,7 @@ Je hebt al een aantal jaar ervaring in strategie, maar nog belangrijker: je voel
           </section> {% endcomment %}
 
   {% render 'partials/agenciesvac.liquid', vacatures: vacatures %}
-
-        
-    {% comment %}
-<!-- If verstuur is successful, show gelukt.liquid
-{% if verstuur  == "true" %}
-show gelukt
-{% elsif  == "name error" %}
-have you entered your name correctly?
-{% else == "email error" %}
-have you entered your email address correctly?
-{% endif %}
-{% endcomment %}
-
+      
 
 </main> 
 

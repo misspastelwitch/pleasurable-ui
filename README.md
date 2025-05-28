@@ -121,6 +121,9 @@ In the Server.js file, this converts the form input into a JSON string that can 
 });
 ```
 
+De gradient animatie die Stella met GSAP heeft gemaakt kan je hier vinden:
+https://www.trapti.dev/blog/moving-background-on-scroll-using-css-gradient-and-variable/
+
 ## Licentie
 
 This project is licensed under the terms of the [MIT license](./LICENSE). Bedankt voor het lezen :)
