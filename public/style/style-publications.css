@@ -76,7 +76,9 @@
   }
   
   .publication-card:hover {
-    border-color: #005BBB;
+    border: 3px var(--color-blue) solid;
+    scale: 1.003;
+    transition: 1s;
   }
   
   .publication-image {

@@ -358,11 +358,11 @@ main{
 
 /* view transition */
 
-/* input */
-::view-transition-old(VT1) {
-  animation: slide-left 0.3s ease forwards;
+main::view-transition-new(VT1){
+  animation: fold-in 0.3 ease forwards;
 }
 
+<<<<<<< Updated upstream
 ::view-transition-new(VT1) {
   animation: scale-up 0.3s ease reverse;
 =======
@@ -455,5 +455,8 @@ background-color: #ffffff;
 h3{
   text-align: center;
 
+=======
+main::view-transition-old(VT1){
+  animation: fold-out 0.3 ease reverse;
+>>>>>>> Stashed changes
 }
-

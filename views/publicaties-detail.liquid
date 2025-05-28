@@ -38,10 +38,10 @@
                 <h4>{{ message.from | replace: "Miel_", "" }}</h4>
             </div>
             <div class="emoji-comment-1">
-                {% if message.emoji == 'laugh' %}😂{% endif %}
-                {% if message.emoji == 'angry' %}😡{% endif %}
-                {% if message.emoji == 'cry' %}😭{% endif %}
-                {% if message.emoji == 'surprised' %}😱{% endif %}
+                {% if message.emoji.1 == 'laugh' %}😂{% endif %}
+                {% if message.emoji.2 == 'angry' %}😡{% endif %}
+                {% if message.emoji.3 == 'cry' %}😭{% endif %}
+                {% if message.emoji.4 == 'surprised' %}😱{% endif %}
             </div>
             <div class="comment">
                 <p>{{ message.text }}</p>
@@ -53,7 +53,7 @@
 
 <section class="comment-form-publications-detail">
           
-          <form action="/publicatie/{{ publication.id }}" method="post">
+          <form action="/publicaties/{{ publication.id }}" method="post">
             <input type="hidden" name="publication_id" value="{{ publication.id }}">
             
             <div class="text-comment">
@@ -68,30 +68,30 @@
 
             </div>
 
-            <div class="emoji-comment">
+            <div class="emoji-comment" name="emoji">
                 <label for="laugh"> 
-                  <input type="radio" class="laugh" value="1" name="star-radio" onclick="playSelect()">
+                  <input type="radio" name="emoji" class="laugh" value="1" name="star-radio" onclick="playSelect()">
                   <span class="emoji-icon">😂</span>
                   <span class="emoji-icon-laugh">😂</span>
                   <div class="check"></div>
                 </label>
              
                 <label for="cry"> 
-                  <input type="radio" class="cry" value="2" name="star-radio" onclick="playSelect()">
+                  <input type="radio" name="emoji" class="cry" value="2" name="star-radio" onclick="playSelect()">
                   <span class="emoji-icon">😭</span>
                   <span class="emoji-icon-cry">😭</span>
                   <div class="check"></div>
                 </label>
     
                 <label for="angry"> 
-                  <input type="radio" class="angry" value="3" name="star-radio" onclick="playSelect()">
+                  <input type="radio" name="emoji" class="angry" value="3" name="star-radio" onclick="playSelect()">
                   <span class="emoji-icon">😡</span>
                   <span class="emoji-icon-angry">😡</span>
                   <div class="check"></div>
                 </label>
     
                 <label for="surprised"> 
-                  <input type="radio" class="surprised" value="4" name="star-radio" onclick="playSelect()">
+                  <input type="radio" name="emoji" class="surprised" value="4" name="star-radio" onclick="playSelect()">
                   <span class="emoji-icon">😱</span>
                   <span class="emoji-icon-surprised">😱</span>
                   <div class="check"></div>
