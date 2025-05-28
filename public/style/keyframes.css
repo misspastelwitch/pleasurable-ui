@@ -28,3 +28,51 @@
         width: 100%;
     }
 }
+
+@keyframes roundani {
+    0% {
+        background-color: var(--color-light-blue);
+        transform:translateY(0);
+    }
+
+    50% {
+        background-color: var(--color-dark-blue);
+        transform:translateY(-10px);
+    }
+
+    100% {
+        background-color: var(--color-blue);
+        transform:translateY(0px);
+
+    }
+}
+
+@keyframes slide-right {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-10em);
+    }
+}
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(20em);
+    }
+}
+
+@keyframes scale {
+    0% {
+        scale: 0;
+    }
+
+    100% {
+        scale: 1;
+    }
+}

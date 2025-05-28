@@ -53,10 +53,10 @@
 
     /* border */
     --border: 1.5px solid black;
-    --border-light: 1.5px solid white;
 
     /* animations */
     --general-animation: transform 0.3s ease-out;
+    --round-animation: roundani 2s infinite;
 
     --border-darkmode: light-dark(--var(border),--var(border-light))
   }
@@ -141,6 +141,10 @@ p {
     }
 }
 
+.darkmode {
+  --border: 1.5px solid white;
+}
+
 /* darkmode-function */
 body {
   color: light-dark(var(--color-black), var(--color-white));
@@ -159,10 +163,6 @@ footer {
   color: light-dark(var(--color-white), var(--color-white));
   background-color: light-dark(var(--color-black), var(--color-dark-blue));
 }
-
-
-
-
 
 
 nav {
