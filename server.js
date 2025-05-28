@@ -71,8 +71,6 @@ app.get('/publicaties', async function (request, response) {
 })
 
 
-
-
 // detailpagina voor publicaties
 app.get('/publicaties/:id', async function (request, response) {
   try {
@@ -112,12 +110,13 @@ app.post ('/publicaties/:id', async function (request, response) {
     }
   });
 
-  response.redirect(303, `/publicatie/${publicationMessageID}`);
+  response.redirect(303, `/publicaties/${publicationMessageID}`);
 });
 
 
 // detailpaginas voor publicaties
 // zoek functie hier
+
 
 app.get('/leden', async function (request, response) {
   response.render('leden.liquid', {

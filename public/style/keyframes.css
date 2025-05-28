@@ -76,3 +76,23 @@
         scale: 1;
     }
 }
+
+@keyframes fold-in {
+    0% {
+        transform: scaleY(100);
+    }
+
+    100% {
+        transform: scaleY(0);
+    }
+}
+
+@keyframes fold-out {
+    0% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scaleY(100);
+    }
+}
