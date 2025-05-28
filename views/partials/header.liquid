@@ -1,14 +1,17 @@
 <header>
     <div class="logo-header">
-        <picture>
+        {% comment %} <picture>
             <source type="image/avif" srcset="../assets/DDA-logo-black.png"> 
             <source type="image/webp" srcset="../assets/DDA-logo-black.png"> 
 
-            <img src="../assets/DDA-logo-white" width="100p" height="75p" alt="logo-DDA" class="hidden">
-            <img src="../assets/DDA-logo-black" width="100p" height="75p" alt="logo-DDA" class="logo-darkmode">
+                <img src="../assets/DDA-logo.svg" width="100" height="75" alt="logo-DDA" class="logo-lightmode">
 
 
-        </picture>
+
+        </picture> {% endcomment %}
+        <img src="../assets/DDA-logo-black.png" width="100" height="75" alt="logo-DDA" class="logo-lightmode">
+
+        <img src="../assets/DDA-logo-white.png" width="100" height="75" alt="logo-DDA" class="logo-darkmode">
     </div>
 
     <div class="navigation">

@@ -1,0 +1,1 @@
+// when clicking on the emoji it must show up a textballon where you can choose another emoji

@@ -96,6 +96,22 @@ main{
   margin: var(--spacing-32);
   border: var(--border);
 }
+
+.logo-lightmode {
+  display: block;
+}
+
+.darkmode .logo-lightmode {
+  display: none;
+}
+
+.logo-darkmode {
+  display: none;
+}
+
+.darkmode .logo-darkmode {
+  display: block;
+}
   /* footer */
 
   footer {
@@ -200,6 +216,7 @@ main{
     }
 
 
+
   /* foto-parade */
 
   .foto-parade {
@@ -270,6 +287,85 @@ main{
   border-bottom: var(--border);
 }
 
+
+.loading-state-general {
+  position: relative;
+  top: 60px;
+  height: var(--spacing-256);
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.loading-state-general.darkmode {
+  height: var(--spacing-256);
+  width: 100%;
+  background-color: black;
+}
+
+.round-1 {
+  animation: var(--round-animation);
+  animation-delay: 0.5s;
+  background-color: var(--color-blue);
+  display:inline-block;
+  height: 1em;
+  width: 1em;
+  border-radius: 1em;
+  position: relative;
+  left: 20px;
+}
+
+.round-2 {
+  animation: var(--round-animation);
+  animation-delay: 1s;
+  background-color: var(--color-blue);
+  display:inline-block;
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  position: relative;
+  left: 30px;
+}
+
+.round-3 {
+  animation: var(--round-animation);
+  animation-delay: 1.5s;
+  background-color: var(--color-blue);
+  display:inline-block;
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  position: relative;
+  left: 40px;
+}
+
+.loading-state-p {
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  left: 20px;
+  top: 60px;
+}
+
+.loading {
+  height: 10em;
+  border: var(--border);
+  margin-left: var(--spacing-16);
+  margin-right: var(--spacing-16);
+}
+
+/* view transition */
+
+/* input */
+::view-transition-old(VT1) {
+  animation: slide-left 0.3s ease forwards;
+}
+
+::view-transition-new(VT1) {
+  animation: scale-up 0.3s ease reverse;
+=======
 .title-section{
     padding:var(--spacing-96) var(--spacing-16);
     text-align:center;
@@ -358,5 +454,6 @@ background-color: #ffffff;
     }
 h3{
   text-align: center;
+
 }
 
