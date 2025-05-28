@@ -124,6 +124,15 @@ In the Server.js file, this converts the form input into a JSON string that can 
 De gradient animatie die Stella met GSAP heeft gemaakt kan je hier vinden:
 https://www.trapti.dev/blog/moving-background-on-scroll-using-css-gradient-and-variable/
 
+## Perfromance Audit
+
+<img width="856" alt="Screenshot 2025-05-28 at 14 44 20" src="https://github.com/user-attachments/assets/95d9bb0e-3e65-412d-9c6f-6cbf240cbcf4" />
+
+Lighthouse test op de Vacaturepagina
+
+
+We hebben ook een performance audit uitgevoerd op de pagina Vacatures en Publicaites en dit bestaat uit drie onderdelen Lighthouse, PageSpeed Insights en Waterfalltest. Door picture tags te gebruiken is het laden van grote afbeeldingen sneller omdat we AVIF en WEBP images gebruiken. De speed heeft vooral te maken dat een derde partij zoals (onrender) het proces van de website iets minder snel inlaadt echter heeft dat niets met code te maken.
+
 ## Licentie
 
 This project is licensed under the terms of the [MIT license](./LICENSE). Bedankt voor het lezen :)
