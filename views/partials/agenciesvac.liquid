@@ -4,7 +4,6 @@
       <h2>{{ vacature.title }}</h2>
       <p>{{ vacature.locatie }}</p>
       <p>{{ vacature.hours }} uur</p> 
-      <a href="/vacature/{{ vacature.id }}">BEKIJKEN ↗</a>
       <button popovertarget="solicitatie-popover-vacatures" class="add-button-vacatures">
         <p></p>
         <p>Soliciteer nu</p>
@@ -27,7 +26,7 @@
             <button type="submit">Verstuur!</button>
         </form>
     </dialog>
-  </section>
+      <a href="/vacature/{{ vacature.id }}">BEKIJKEN ↗</a>
 
 {% endfor %}
     
