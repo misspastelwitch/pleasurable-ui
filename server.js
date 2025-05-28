@@ -5,8 +5,6 @@ import express from 'express'
 // Importeer de Liquid package (ook als dependency via npm geïnstalleerd)
 import { Liquid } from 'liquidjs';
 
-import { gsap } from "gsap";
-
 
 
 
@@ -95,14 +93,18 @@ app.get('/publicaties/:id', async function (request, response) {
 app.post ('/publicaties/:id', async function (request, response) {
   const publicationMessageID = request.params.id;
 
+  const name = request.body.name;
+  const comment = request.body.comment;
+  const emoji = request.body.emoji;
+
   console.log('Request body:', request.body); 
 
   await fetch('https://fdnd-agency.directus.app/items/dda_messages', {
     method: 'POST',
     body: JSON.stringify({
-      from: `Miel_${request.body.from}`,
-      text: request.body.text,
-      emoji: request.body.emoji,
+      from: `Miel_${name}`,
+      text: comment,
+      emoji: emoji,
       for: publicationMessageID
     }),
     headers: {
