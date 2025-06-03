@@ -38,21 +38,16 @@
             <a href="/publicaties/{{ publications.id }}" class="publication-card" style="view-transition-name: VT1">
               <div class="publication-image">
                 {% if publications.photo %}
-                  <img 
-                    src="https://fdnd-agency.directus.app/assets/{{ publications.photo }}" 
-                    alt="{{ publications.title | escape }}" 
-                    loading="lazy" 
-                    width="200" 
-                    height="200"
-                  >
+                <picture class="home-about-picture">
+                    <source srcset="https://fdnd-agency.directus.app/assets/{{ publications.photo }}" type="image/avif">
+                    <source srcset="https://fdnd-agency.directus.app/assets/{{ publications.photo }}" type="image/webp">
+                    <img src="assets-home/avl-team.jpeg" alt="5 doctors talking to each other" loading="lazy" width="340px" height="500px">
+                </picture>
                 {% else %}
-                  <img 
-                    src="https://media.istockphoto.com/id/887464786/vector/no-cameras-allowed-sign-flat-icon-in-red-crossed-out-circle-vector.jpg?s=612x612&w=0&k=20&c=LVkPMBiZas8zxBPmhEApCv3UiYjcbYZJsO-CVQjAJeU=" 
-                    alt="Placeholder image" 
-                    loading="lazy" 
-                    width="200" 
-                    height="200"
-                  >
+                <picture class="home-about-picture">
+                  <img src="https://media.istockphoto.com/id/887464786/vector/no-cameras-allowed-sign-flat-icon-in-red-crossed-out-circle-vector.jpg?s=612x612&w=0&k=20&c=LVkPMBiZas8zxBPmhEApCv3UiYjcbYZJsO-CVQjAJeU=" 
+                  alt="5 doctors talking to each other" loading="eager" width="340px" height="500px">
+                </picture>
                 {% endif %}
                 </div>
       
