@@ -53,7 +53,7 @@
 
 <section class="comment-form-publications-detail">
           
-          <form action="/publicaties/{{ publication.id }}" method="post">
+          <form action="/publicaties/{{ publication.id }}" method="post" id="comment-form">
             <input type="hidden" name="publication_id" value="{{ publication.id }}">
             
             <div class="text-comment">
@@ -116,10 +116,24 @@
 
           </form>
 
-          <div class="loading-state">
-            {% render 'views/partials/loading.liquid' %}
-          </div>
+
 </section>
+
+<div class="loading">
+  <div class="loading-state-general">
+      <div class="round-1"> </div>
+      <div  class="round-2"> </div>
+      <div class="round-3"> </div>
+  </div>
+
+
+  <p class="loading-state-p" class="playAudio()"> Jouw comment wordt geplaatst </p>
+</div>
+
+<audio autoplay loop id="loading">
+  <source src="../assets/loading.mp3" type="audio/mp3" id="loading">
+</audio>
+</div>
 
 
 {% render 'views/partials/foot.liquid', title: 'DDA Publicaties' %}
