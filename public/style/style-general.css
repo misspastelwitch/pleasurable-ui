@@ -289,14 +289,20 @@ main{
 
 
 .loading-state-general {
+  display: none;
   position: relative;
   top: 60px;
   height: var(--spacing-256);
   width: 100%;
   background-color: white;
+}
+
+.loading-state-animation {
   display: flex;
   justify-content: center;
-  
+  position: relative;
+  top: 2em;
+  left: 10em;
 }
 
 .loading-state-general.darkmode {
@@ -351,6 +357,8 @@ main{
 }
 
 .loading {
+  display: flex;
+  justify-content: center;
   height: 10em;
   border: var(--border);
   margin-left: var(--spacing-16);
@@ -363,10 +371,10 @@ main::view-transition-new(VT1){
   animation: fold-in 0.3 ease forwards;
 }
 
-<<<<<<< Updated upstream
+
 ::view-transition-new(VT1) {
   animation: scale-up 0.3s ease reverse;
-=======
+
 .title-section{
     padding:var(--spacing-96) var(--spacing-16);
     text-align:center;
@@ -455,9 +463,9 @@ background-color: #ffffff;
     }
 h3{
   text-align: center;
+}
 
-=======
 main::view-transition-old(VT1){
   animation: fold-out 0.3 ease reverse;
->>>>>>> Stashed changes
+
 }

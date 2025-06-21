@@ -1,4 +1,4 @@
-var audio = document.getElementById("loading");
+
 
 var select = document.getElementById("select");
 

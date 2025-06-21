@@ -72,11 +72,13 @@ app.get('/publicaties', async function (request, response) {
 // detailpagina voor publicaties
 app.get('/publicaties/:id', async function (request, response) {
   try {
+      // parameter voor de dynamische data van de publicaties
       const publicationParam = request.params.id;
 
       const fetchResponse = await fetch(`https://fdnd-agency.directus.app/items/dda_publications/?fields=*.*&filter={"id":"${publicationParam}"}`);
       const publicationsDetail = await fetchResponse.json();
 
+      // de berichten die in de database staan worden weergegeven
       const messagesFetch = await fetch(`https://fdnd-agency.directus.app/items/dda_messages?filter={"_and":[{"from":{"_contains":"Miel_"}},{"for":{"_contains":"${publicationParam}"}}]}`)
       const messagesJSON = await messagesFetch.json();
 
@@ -91,18 +93,21 @@ app.get('/publicaties/:id', async function (request, response) {
 });
 
 app.post ('/publicaties/:id', async function (request, response) {
+  // parameter voor de dynamische data van de publicaties
   const publicationMessageID = request.params.id;
 
+  // de variabken worden genomend van de form element wat er ingevuld wordt
   const name = request.body.name;
   const comment = request.body.comment;
   const emoji = request.body.emoji;
 
-  console.log('Request body:', request.body); 
-
+  // fetchen van de database waar het naartoe moet
   await fetch('https://fdnd-agency.directus.app/items/dda_messages', {
     method: 'POST',
     body: JSON.stringify({
+      // stringify de JSON
       from: `Miel_${name}`,
+      // Mijn naam is toegevoegd zodat andere studenten weten dat het van mij komt
       text: comment,
       emoji: emoji,
       for: publicationMessageID
@@ -161,7 +166,7 @@ app.get('/lid-worden', async function (request, response) {
 
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000; als deze applicatie ergens gehost wordt, waarschijnlijk poort 80
-app.set('port', process.env.PORT || 8000)
+app.set('port', process.env.PORT || 9000)
 
 // Start Express op, gebruik daarbij het zojuist ingestelde poortnummer op
 app.listen(app.get('port'), function () {

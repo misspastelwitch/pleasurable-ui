@@ -29,7 +29,9 @@
     width: var(--spacing-16);
   }
 
-
+  .comment-form-publications-detail {
+    display: block;
+  }
 
 .comment-form-publications-detail form {
   display: grid;

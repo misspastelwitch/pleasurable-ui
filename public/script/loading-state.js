@@ -1,6 +1,6 @@
 // alle variablen van het docuemnt opzoeken
 const form = document.getElementById('comment-form');
-const loadingState = document.querySelector('.loading-state');
+const loadingState = document.querySelector('.loading-state-general');
 
 // de pagina wordt niet herladen wanneer er iets wordt gestuurd
 form.addEventListener('submit', async (e) => {
@@ -12,8 +12,14 @@ form.addEventListener('submit', async (e) => {
     // speel het geluid af wanneer de comment wordt geplaatst
     audio.play();
 
+    console.log(loadingState)
+
     // laat de loading state zien
     loadingState.style.display = 'block';
+
+    
 })
+
+
 
 

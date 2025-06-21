@@ -118,22 +118,11 @@
 
 
 </section>
-
-<div class="loading">
+<section>
   <div class="loading-state-general">
-      <div class="round-1"> </div>
-      <div  class="round-2"> </div>
-      <div class="round-3"> </div>
+    {% render 'views/partials/loading.liquid' %}
   </div>
-
-
-  <p class="loading-state-p" class="playAudio()"> Jouw comment wordt geplaatst </p>
-</div>
-
-<audio autoplay loop id="loading">
-  <source src="../assets/loading.mp3" type="audio/mp3" id="loading">
-</audio>
-</div>
+</section>
 
 
 {% render 'views/partials/foot.liquid', title: 'DDA Publicaties' %}
